@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "scd/service-card",
+  "version": "1.0.0",
+  "title": "Service Card",
+  "category": "design",
+  "description": "Short description of the bPlugins",
+  "keywords": [
+    "Service Card "
+  ],
+  "textdomain": "service-card",
+  "attributes": {
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "textType": {
+      "type": "object",
+      "default": {
+        "typo": {
+          "fontSize": {
+            "desktop": 20,
+            "tablet": 18,
+            "mobile": 16
+          },
+          "fontWeight": 700,
+          "lineHeight": "1.75rem",
+          "fontFamily": "ui-sans-serif, system-ui",
+          "textTransform": "capitalize"
+        }
+      }
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {}
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}
