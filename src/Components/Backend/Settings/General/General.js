@@ -1,6 +1,6 @@
 import { __ } from "@wordpress/i18n";
 import { PanelBody, SelectControl } from "@wordpress/components";
-import { themeSwitch, updateData } from "../../../../utils/functions";
+import { themeSwitch } from "../../../../utils/functions";
 import { themeOption } from '../../../../utils/options';
 import { ItemsPanel } from '../../../../../../bpl-tools/Components';
 import ServiceItemPanel from '../../ServiceItemPanel/ServiceItemPanel';
@@ -27,7 +27,7 @@ const General = ({ attributes, setAttributes }) => {
       </PanelBody>
       <PanelBody
         className="bPlPanelBody"
-        title={__("Service Card", "service-card")}
+        title={__("Service Card Content", "service-card")}
         initialOpen={true}
       >
         <ItemsPanel

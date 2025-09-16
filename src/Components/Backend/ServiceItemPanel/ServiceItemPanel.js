@@ -6,8 +6,6 @@ const ServiceItemPanel = ({ attributes, setAttributes, index }) => {
 
     const { serviceData = [] } = attributes || {};
 
-    console.log('servicePanel---', index)
-
     const { title, description, icon } = serviceData[index];
 
     return (

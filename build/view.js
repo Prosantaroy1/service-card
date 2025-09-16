@@ -849,17 +849,86 @@ __webpack_require__.r(__webpack_exports__);
 
 const Style = ({
   attributes,
-  id,
-  device
+  id
 }) => {
+  const {
+    Styles = {},
+    column = {},
+    align
+  } = attributes || {};
+  const {
+    SectionContainer,
+    cardBody
+  } = Styles;
+  const {
+    title,
+    description,
+    icon
+  } = cardBody;
+
+  // console.log('dynamic', title?.colors)
+  // console.log('dynamic', title?.typo)
+
   const mainSl = `#${id}`;
+  const blockSl = `${mainSl} .service-card-wrapper`;
+  const wrapperSl = `${blockSl} .serviceContainer`;
+  const layoutSl = `${wrapperSl} .cards-grid`;
+  const cardVerticalSl = `${layoutSl} .card-vertical`;
+  const IconWrapperSl = `${wrapperSl} .icon-wrapper`;
+  const IconSl = `${cardVerticalSl} .card-vertical .icon svg`;
+  const TitleSl = `${wrapperSl} .card-title`;
+  const DescriptionSl = `${wrapperSl} .card-description`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
-		 
-	
 
-		 
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", cardBody.title.typo).googleFontLink}  
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", cardBody.description.typo).googleFontLink}  
+
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(TitleSl, cardBody.title.typo).styles}  
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(DescriptionSl, cardBody.description.typo).styles}  
+
+
+		${layoutSl}{
+			gap: ${column?.gap}
+		}
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.deskBreakpoint}{
+		   ${layoutSl}{
+		      grid-template-columns: repeat(${align ? column?.desktop : 3}, 1fr);
+		   }
+		}
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{ 
+		   ${layoutSl}{ 
+			   grid-template-columns: repeat(${align ? column?.tablet : 2}, 1fr);
+			} 
+		}
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{ 
+		   ${layoutSl}{ 
+			   grid-template-columns: repeat(${align ? column?.mobile : 1}, 1fr);
+			} 
+		}
+
+		${cardVerticalSl}{
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(SectionContainer?.bg)}
+		  padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(SectionContainer?.padding?.desktop)};
+		  border: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBorderCSS)(SectionContainer?.border)};
+		}
+		${IconSl}{
+		  color: ${icon?.colors}
+	      width: ${icon?.width}
+	      height: ${icon?.height}
+		}
+
+		${TitleSl}{
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(title?.bg)}
+		  color: ${title?.colors}
+		}
+		${DescriptionSl}{
+		 color: ${description?.colors}
+		}
+
+
+	
 
 	`
     }

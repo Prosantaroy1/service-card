@@ -20,9 +20,9 @@ const Settings = ({ attributes, setAttributes, device }) => {
 			<TabPanel className='bPlTabPanel wp-block-b-blocks-test-purpose' activeClass='activeTab' tabs={generalStyleTabs} onSelect={tabController}>
 				{
 					tab => <>
-						{'general' === tab.name && <General attributes={attributes} setAttributes={setAttributes} />}
+						{'general' === tab.name && <General attributes={attributes} device={device} setAttributes={setAttributes} />}
 
-						{'style' === tab.name && <Style attributes={attributes} setAttributes={setAttributes} />}
+						{'style' === tab.name && <Style attributes={attributes} device={device} setAttributes={setAttributes} />}
 					</>
 				}
 			</TabPanel>

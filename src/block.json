@@ -17,7 +17,7 @@
 		},
 		"align": {
 			"type": "string",
-			"default": "wide"
+			"default": "full"
 		},
 		"theme": {
 			"type": "string",
@@ -49,6 +49,91 @@
 					"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-zap\"><path d=\"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z\"/></svg>"
 				}
 			]
+		},
+		"Styles": {
+			"type": "object",
+			"default": {
+				"SectionContainer": {
+					"bg": {
+						"color": "#fff"
+					},
+					"padding": {
+						"desktop": {
+							"top": "32px",
+							"left": "24px",
+							"bottom": "32px",
+							"right": "24px"
+						},
+						"tablet": {
+							"top": "32px",
+							"left": "24px",
+							"bottom": "32px",
+							"right": "24px"
+						},
+						"mobile": {
+							"top": "32px",
+							"left": "24px",
+							"bottom": "32px",
+							"right": "24px"
+						}
+					},
+					"border": {
+						"width": "",
+						"color": "",
+						"style": "",
+						"side": "",
+						"radius": "16px"
+					}
+				},
+				"cardBody": {
+					"title": {
+						"bg": {
+							"color": "#fff"
+						},
+						"colors": "#1a202c",
+						"typo": {
+							"fontWeight": 600,
+							"fontSize": {
+								"desktop": 24,
+								"tablet": 16,
+								"mobile": 12
+							},
+							"lineHeight": 1.5,
+							"fontFamily": "Montserrat, sans-serif"
+						}
+					},
+					"description": {
+						"bg": {
+							"color": "#fff"
+						},
+						"colors": "#4a5568",
+						"typo": {
+							"fontWeight": 500,
+							"fontSize": {
+								"desktop": 16,
+								"tablet": 14,
+								"mobile": 12
+							},
+							"lineHeight": 1.5,
+							"fontFamily": "Montserrat, sans-serif"
+						}
+					},
+					"icon": {
+						"width": "40px",
+						"height": "40px",
+						"colors": "#4a5568"
+					}
+				}
+			}
+		},
+		"column": {
+			"type": "object",
+			"default": {
+				"desktop": 3,
+				"tablet": 2,
+				"mobile": 1,
+				"gap": "16px"
+			}
 		}
 	},
 	"supports": {
