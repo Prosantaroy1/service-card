@@ -1,10 +1,5 @@
-const iconColor = '#4527a4';
 
-export const blockIcon = <svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 20 20' fill={iconColor}>
-	<path fill={iconColor} fillRule='evenodd' d='M9.938 4.016a.146.146 0 00-.054.057L3.027 15.74a.176.176 0 00-.002.183c.016.03.037.05.054.06.015.01.034.017.066.017h13.713a.12.12 0 00.066-.017.163.163 0 00.055-.06.176.176 0 00-.003-.183L10.12 4.073a.146.146 0 00-.054-.057.13.13 0 00-.063-.016.13.13 0 00-.064.016zm1.043-.45a1.13 1.13 0 00-1.96 0L2.166 15.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L10.982 3.566z'></path>
-	<rect fill={iconColor} width='2' height='2' x='9.002' y='13' rx='1'></rect>
-	<path fill={iconColor} d='M9.1 7.995a.905.905 0 111.8 0l-.35 3.507a.553.553 0 01-1.1 0L9.1 7.995z'></path>
-</svg>;
+export const blockIcon = <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" height="1em" width="1em"><path d="M9.715,12c1.151,0,2-0.849,2-2s-0.849-2-2-2s-2,0.849-2,2S8.563,12,9.715,12z" /><path d="M20,4H4C2.897,4,2,4.841,2,5.875v12.25C2,19.159,2.897,20,4,20h16c1.103,0,2-0.841,2-1.875V5.875C22,4.841,21.103,4,20,4z M20,18L4,17.989V6l16,0.011V18z" /><path d="M14 9H18V11H14zM15 13H18V15H15zM13.43 15.536c0-1.374-1.676-2.786-3.715-2.786S6 14.162 6 15.536V16h7.43V15.536z" /></svg>;
 
 export const verticalLineIcon = <svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 14.707 14.707'>
 	<rect x='6.275' y='0' width='2.158' height='14.707' />
@@ -13,3 +8,6 @@ export const verticalLineIcon = <svg xmlns='http://www.w3.org/2000/svg' width={2
 export const horizontalLineIcon = <svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 357 357'>
 	<path d='M357,204H0v-51h357V204z' />
 </svg>;
+
+
+

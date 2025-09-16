@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import './style.scss';
 import Style from './Components/Common/Style';
+import ThemeSwitch from './Components/Theme/ThemeSwitch/ThemeSwitch';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		createRoot(blockNameEl).render(<>
 			<Style attributes={attributes} id={blockNameEl.id} />
 
-			<div>
-				<h3>save Part</h3>
+			<div className='service-card-wrapper'>
+				<ThemeSwitch {...{ attributes }} />
 			</div>
 		</>);
 

@@ -2,6 +2,7 @@ import { useBlockProps } from "@wordpress/block-editor";
 import Settings from "./Settings/Settings";
 import Style from "../Common/Style";
 import { withSelect } from "@wordpress/data";
+import ThemeSwitch from '../Theme/ThemeSwitch/ThemeSwitch';
 
 
 const Edit = (props) => {
@@ -14,8 +15,8 @@ const Edit = (props) => {
       <div {...useBlockProps()}>
         <Style attributes={attributes} id={`block-${clientId}`} device={device} />
 
-        <div>
-          <h3>Edit Part</h3>
+        <div className='service-card-wrapper'>
+          <ThemeSwitch {...{ attributes, setAttributes }} />
         </div>
 
       </div>

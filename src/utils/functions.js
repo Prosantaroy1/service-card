@@ -17,3 +17,13 @@ export const updateData = (attr, value, ...props) => {
     draft[currentProp] = updateData(draft[currentProp], value, ...remainingProps);
   });
 };
+
+
+export const themeSwitch = (theme, attributes) => {
+
+  return produce(attributes, (draft) => {
+    draft['theme'] = theme;
+
+  })
+
+}

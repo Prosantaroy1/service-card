@@ -853,64 +853,11 @@ const Style = ({
   device
 }) => {
   const mainSl = `#${id}`;
-  const blockSl = `${mainSl} .main-tp-div`;
-  const paraSl = `${blockSl} .para`;
-  const subTitleSl = `${blockSl} .subtitle`;
-  const imgSl = `${blockSl} .Image`;
-  const {
-    textType,
-    paraColor,
-    BoxModelPadding,
-    boxBackground,
-    containerShadow,
-    ImgHeigth,
-    ImgWidth,
-    subtitleColor,
-    BoxBorderRadius,
-    titleAlign,
-    subtitleAlign,
-    contentColors
-  } = attributes;
-
-  //const { boxBg } = boxBackground;
-
-  console.log('contentColors style22----', contentColors);
-
-  // const { fontFamily, fontCategory, fontStyle, fontVariant, textDecoration, textTransform } = textType;
-  // //const { desktop , mobile } = fontSize;
-  // //console.log(fontSize)
-
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
 		 
-		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", textType?.typo)?.googleFontLink} 
-
-         ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(paraSl, textType?.typo).styles} 
-		 
-		 ${paraSl} {
-			color:  ${paraColor};
-			text-align: ${titleAlign};
-			background: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(contentColors)}
-		 }
-		 ${subTitleSl}{
-		   color: ${subtitleColor};
-			text-align: ${subtitleAlign}
-		 }
-		 ${blockSl}{
-		   padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(BoxModelPadding)};
-		   ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(boxBackground)}
-		   box-shadow: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getShadowCSS)(containerShadow[0])};
-		   border-radius: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(BoxBorderRadius)};
-		 }
-		${imgSl}{
-		  width: ${ImgWidth};
-		  height: ${ImgHeigth}; 
-		}
-		svg{
-		    width: 28px;
-           height: 28px;
-		}
+	
 
 		 
 
@@ -919,6 +866,204 @@ const Style = ({
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Style);
+
+/***/ }),
+
+/***/ "./src/Components/Theme/ServiceThemeOne.js":
+/*!*************************************************!*\
+  !*** ./src/Components/Theme/ServiceThemeOne.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ServiceThemeOne)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function ServiceThemeOne({
+  attributes
+}) {
+  const {
+    serviceData = []
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "serviceContainer serviceThemeOne"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "cards-grid"
+  }, serviceData?.length > 0 && serviceData.map((item, idx) => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: idx,
+      className: "card-vertical"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "icon-wrapper"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "icon",
+      dangerouslySetInnerHTML: {
+        __html: item?.icon
+      }
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      className: "card-title"
+    }, item?.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "card-description"
+    }, item?.description));
+  })));
+}
+
+/***/ }),
+
+/***/ "./src/Components/Theme/ServiceThemeThree.js":
+/*!***************************************************!*\
+  !*** ./src/Components/Theme/ServiceThemeThree.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ServiceThemeThree)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function ServiceThemeThree({
+  attributes
+}) {
+  const {
+    serviceData = []
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "serviceContainer serviceThemeThree"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "cards-grid"
+  }, serviceData?.length > 0 && serviceData.map((item, idx) => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: idx,
+      className: "card-diagonal"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "diagonal-bg"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "icon-wrapper"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "icon",
+      dangerouslySetInnerHTML: {
+        __html: item?.icon
+      }
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "content-area"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "accent-line"
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      className: "card-title"
+    }, item?.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "card-description"
+    }, item?.description)));
+  })));
+}
+
+/***/ }),
+
+/***/ "./src/Components/Theme/ServiceThemeTwo.js":
+/*!*************************************************!*\
+  !*** ./src/Components/Theme/ServiceThemeTwo.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ServiceThemeTwo)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+function ServiceThemeTwo({
+  attributes
+}) {
+  const {
+    serviceData = []
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "serviceContainer serviceThemeTwo"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "cards-grid"
+  }, serviceData?.length > 0 && serviceData.map((item, idx) => {
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      key: idx,
+      className: "card-horizontal"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "icon-section"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "icon",
+      dangerouslySetInnerHTML: {
+        __html: item?.icon
+      }
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "content-section"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+      className: "card-title"
+    }, item?.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+      className: "card-description"
+    }, item?.description)));
+  })));
+}
+
+/***/ }),
+
+/***/ "./src/Components/Theme/ThemeSwitch/ThemeSwitch.js":
+/*!*********************************************************!*\
+  !*** ./src/Components/Theme/ThemeSwitch/ThemeSwitch.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ThemeSwitch)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ServiceThemeOne__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ServiceThemeOne */ "./src/Components/Theme/ServiceThemeOne.js");
+/* harmony import */ var _ServiceThemeThree__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ServiceThemeThree */ "./src/Components/Theme/ServiceThemeThree.js");
+/* harmony import */ var _ServiceThemeTwo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ServiceThemeTwo */ "./src/Components/Theme/ServiceThemeTwo.js");
+
+
+
+
+function ThemeSwitch({
+  attributes,
+  setAttributes
+}) {
+  const {
+    theme = "default"
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(ThemeChange, {
+    theme: theme,
+    attributes,
+    setAttributes
+  });
+}
+const ThemeChange = ({
+  theme,
+  attributes,
+  setAttributes
+}) => {
+  switch (theme) {
+    case 'themeTwo':
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ServiceThemeTwo__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        attributes,
+        setAttributes
+      });
+    case 'themeThree':
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ServiceThemeThree__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        attributes,
+        setAttributes
+      });
+    default:
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ServiceThemeOne__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        attributes,
+        setAttributes
+      });
+  }
+};
 
 /***/ }),
 
@@ -1064,6 +1209,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 /* harmony import */ var _Components_Common_Style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/Common/Style */ "./src/Components/Common/Style.js");
+/* harmony import */ var _Components_Theme_ThemeSwitch_ThemeSwitch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Components/Theme/ThemeSwitch/ThemeSwitch */ "./src/Components/Theme/ThemeSwitch/ThemeSwitch.js");
+
 
 
 
@@ -1075,7 +1222,11 @@ document.addEventListener('DOMContentLoaded', () => {
     (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(blockNameEl).render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Common_Style__WEBPACK_IMPORTED_MODULE_3__["default"], {
       attributes: attributes,
       id: blockNameEl.id
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "save Part"))));
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "service-card-wrapper"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Components_Theme_ThemeSwitch_ThemeSwitch__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      attributes
+    }))));
     blockNameEl?.removeAttribute('data-attributes');
   });
 });

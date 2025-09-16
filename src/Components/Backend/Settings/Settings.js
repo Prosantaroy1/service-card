@@ -1,18 +1,15 @@
 
 import { InspectorControls, BlockControls } from '@wordpress/block-editor';
-import { TabPanel, Toolbar } from '@wordpress/components';
+import { TabPanel, } from '@wordpress/components';
 import { tabController } from '../../../../../bpl-tools/utils/functions';
 import { generalStyleTabs } from '../../../utils/options';
 import General from './General/General';
 import Style from './Style/Style';
-import { MediaEditControl } from '../../../../../bpl-tools/Components';
+
 
 const Settings = ({ attributes, setAttributes, device }) => {
 
-	const { imgUrl } = attributes
-	// console.log('img change', imgUrl)
 
-	console.log('device select.....', device)
 
 	return <>
 		<InspectorControls>
@@ -33,17 +30,7 @@ const Settings = ({ attributes, setAttributes, device }) => {
 
 
 		<BlockControls>
-			<Toolbar>
-				{
-					imgUrl?.url && <MediaEditControl
-						label='Edit Image'
-						icon='format-image'
-						types={['image']}
-						value={imgUrl}
-						onChange={(v) => setAttributes({ imgUrl: v })}
-					/>
-				}
-			</Toolbar>
+
 		</BlockControls>
 	</>;
 };

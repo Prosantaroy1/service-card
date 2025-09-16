@@ -9,3 +9,9 @@ export const purposeTypeOptions = [
 	{ label: "Primary", value: "primary" }
 ];
 
+export const themeOption = [
+	{ label: "Default", value: "default" },
+	{ label: "ThemeTwo", value: "themeTwo" },
+	{ label: "ThemeThree", value: "themeThree" }
+];
+
