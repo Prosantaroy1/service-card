@@ -8,7 +8,7 @@ import ServiceItemPanel from '../../ServiceItemPanel/ServiceItemPanel';
 
 const General = ({ attributes, setAttributes }) => {
 
-  const { theme, activeIndex, serviceData } = attributes;
+  const { theme, activeIndex } = attributes;
 
   return (
     <>

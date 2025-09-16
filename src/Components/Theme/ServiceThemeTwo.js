@@ -1,5 +1,5 @@
 
-export default function ServiceThemeTwo({ attributes }) {
+export default function ServiceThemeTwo({ attributes, setAttributes }) {
 
     const { serviceData = [] } = attributes;
 
@@ -7,9 +7,9 @@ export default function ServiceThemeTwo({ attributes }) {
         <div className='serviceContainer serviceThemeTwo'>
             <div className="cards-grid">
                 {
-                    serviceData?.length > 0 && serviceData.map((item, idx) => {
+                    serviceData?.length > 0 && serviceData.map((item, index) => {
                         return (
-                            <div key={idx} className="card-horizontal">
+                            <div key={index} className="card-horizontal" onClick={() => setAttributes({ activeIndex: index })}>
                                 <div className="icon-section">
                                     <p
                                         className="icon"

@@ -883,7 +883,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 function ServiceThemeOne({
-  attributes
+  attributes,
+  setAttributes
 }) {
   const {
     serviceData = []
@@ -892,10 +893,13 @@ function ServiceThemeOne({
     className: "serviceContainer serviceThemeOne"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cards-grid"
-  }, serviceData?.length > 0 && serviceData.map((item, idx) => {
+  }, serviceData?.length > 0 && serviceData.map((item, index) => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      key: idx,
-      className: "card-vertical"
+      key: index,
+      className: "card-vertical",
+      onClick: () => setAttributes({
+        activeIndex: index
+      })
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "icon-wrapper"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
@@ -927,7 +931,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 function ServiceThemeThree({
-  attributes
+  attributes,
+  setAttributes
 }) {
   const {
     serviceData = []
@@ -936,10 +941,13 @@ function ServiceThemeThree({
     className: "serviceContainer serviceThemeThree"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cards-grid"
-  }, serviceData?.length > 0 && serviceData.map((item, idx) => {
+  }, serviceData?.length > 0 && serviceData.map((item, index) => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      key: idx,
-      className: "card-diagonal"
+      key: index,
+      className: "card-diagonal",
+      onClick: () => setAttributes({
+        activeIndex: index
+      })
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "diagonal-bg"
     }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -977,7 +985,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 function ServiceThemeTwo({
-  attributes
+  attributes,
+  setAttributes
 }) {
   const {
     serviceData = []
@@ -986,10 +995,13 @@ function ServiceThemeTwo({
     className: "serviceContainer serviceThemeTwo"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cards-grid"
-  }, serviceData?.length > 0 && serviceData.map((item, idx) => {
+  }, serviceData?.length > 0 && serviceData.map((item, index) => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      key: idx,
-      className: "card-horizontal"
+      key: index,
+      className: "card-horizontal",
+      onClick: () => setAttributes({
+        activeIndex: index
+      })
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "icon-section"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {

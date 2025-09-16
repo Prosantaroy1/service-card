@@ -1,14 +1,14 @@
 
-export default function ServiceThemeThree({ attributes }) {
+export default function ServiceThemeThree({ attributes, setAttributes }) {
     const { serviceData = [] } = attributes;
 
     return (
         <div className='serviceContainer serviceThemeThree'>
             <div className="cards-grid">
                 {
-                    serviceData?.length > 0 && serviceData.map((item, idx) => {
+                    serviceData?.length > 0 && serviceData.map((item, index) => {
                         return (
-                            <div key={idx} className="card-diagonal">
+                            <div key={index} className="card-diagonal" onClick={() => setAttributes({ activeIndex: index })}>
                                 <div className="diagonal-bg"></div>
                                 <div className="icon-wrapper">
                                     <p

@@ -1,5 +1,5 @@
 
-export default function ServiceThemeOne({ attributes }) {
+export default function ServiceThemeOne({ attributes, setAttributes }) {
 
     const { serviceData = [] } = attributes;
 
@@ -8,9 +8,9 @@ export default function ServiceThemeOne({ attributes }) {
         <div className='serviceContainer serviceThemeOne'>
             <div className="cards-grid">
                 {
-                    serviceData?.length > 0 && serviceData.map((item, idx) => {
+                    serviceData?.length > 0 && serviceData.map((item, index) => {
                         return (
-                            <div key={idx} className="card-vertical">
+                            <div key={index} className="card-vertical" onClick={() => setAttributes({ activeIndex: index })}>
                                 <div className="icon-wrapper">
                                     <p
                                         className="icon"
