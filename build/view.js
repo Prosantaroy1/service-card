@@ -875,7 +875,7 @@ const Style = ({
   const layoutSl = `${wrapperSl} .cards-grid`;
   const cardVerticalSl = `${layoutSl} .card-vertical`;
   const IconWrapperSl = `${wrapperSl} .icon-wrapper`;
-  const IconSl = `${cardVerticalSl} .card-vertical .icon svg`;
+  const IconSl = `${cardVerticalSl} .icon svg`;
   const TitleSl = `${wrapperSl} .card-title`;
   const DescriptionSl = `${wrapperSl} .card-description`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
@@ -914,9 +914,9 @@ const Style = ({
 		  border: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBorderCSS)(SectionContainer?.border)};
 		}
 		${IconSl}{
-		  color: ${icon?.colors}
-	      width: ${icon?.width}
-	      height: ${icon?.height}
+		  fill: ${icon?.color};
+	      width: ${icon?.width};
+	      height: ${icon?.height};
 		}
 
 		${TitleSl}{
@@ -971,7 +971,7 @@ function ServiceThemeOne({
       })
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "icon-wrapper"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "icon",
       dangerouslySetInnerHTML: {
         __html: item?.icon
@@ -1021,7 +1021,7 @@ function ServiceThemeThree({
       className: "diagonal-bg"
     }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "icon-wrapper"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "icon",
       dangerouslySetInnerHTML: {
         __html: item?.icon
@@ -1073,7 +1073,7 @@ function ServiceThemeTwo({
       })
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "icon-section"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "icon",
       dangerouslySetInnerHTML: {
         __html: item?.icon

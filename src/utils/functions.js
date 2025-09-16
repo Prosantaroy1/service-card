@@ -24,6 +24,263 @@ export const themeSwitch = (theme, attributes) => {
   return produce(attributes, (draft) => {
     draft['theme'] = theme;
 
+    switch (theme) {
+      case 'default':
+        draft['Styles'] = {
+          "SectionContainer": {
+            "bg": {
+              "color": "#fff"
+            },
+            "padding": {
+              "desktop": {
+                "top": "32px",
+                "left": "24px",
+                "bottom": "32px",
+                "right": "24px"
+              },
+              "tablet": {
+                "top": "32px",
+                "left": "24px",
+                "bottom": "32px",
+                "right": "24px"
+              },
+              "mobile": {
+                "top": "32px",
+                "left": "24px",
+                "bottom": "32px",
+                "right": "24px"
+              }
+            },
+            "border": {
+              "width": "",
+              "color": "",
+              "style": "",
+              "side": "",
+              "radius": "16px"
+            }
+          },
+          "cardBody": {
+            "title": {
+              "bg": {
+                "color": "#fff"
+              },
+              "colors": "#1a202c",
+              "typo": {
+                "fontWeight": 600,
+                "fontSize": {
+                  "desktop": 24,
+                  "tablet": 16,
+                  "mobile": 12
+                },
+                "lineHeight": 1.5,
+                "fontFamily": "Montserrat, sans-serif"
+              }
+            },
+            "description": {
+              "bg": {
+                "color": "#fff"
+              },
+              "colors": "#4a5568",
+              "typo": {
+                "fontWeight": 500,
+                "fontSize": {
+                  "desktop": 16,
+                  "tablet": 14,
+                  "mobile": 12
+                },
+                "lineHeight": 1.5,
+                "fontFamily": "Montserrat, sans-serif"
+              }
+            },
+            "icon": {
+              "width": "40px",
+              "height": "40px",
+              "colors": "#4a5568"
+            }
+          }
+        }
+        draft['column'] = {
+          "type": "object",
+          "default": {
+            "desktop": 3,
+            "tablet": 2,
+            "mobile": 1,
+            "gap": "16px"
+          }
+        }
+        break;
+      case 'themeTwo':
+        draft['Styles'] = {
+          "SectionContainer": {
+            "bg": {
+              "color": "#fff"
+            },
+            "padding": {
+              "desktop": {
+                "top": "32px",
+                "left": "24px",
+                "bottom": "32px",
+                "right": "24px"
+              },
+              "tablet": {
+                "top": "32px",
+                "left": "24px",
+                "bottom": "32px",
+                "right": "24px"
+              },
+              "mobile": {
+                "top": "32px",
+                "left": "24px",
+                "bottom": "32px",
+                "right": "24px"
+              }
+            },
+            "border": {
+              "width": "",
+              "color": "",
+              "style": "",
+              "side": "",
+              "radius": "16px"
+            }
+          },
+          "cardBody": {
+            "title": {
+              "bg": {
+                "color": "#fff"
+              },
+              "colors": "#1a202c",
+              "typo": {
+                "fontWeight": 600,
+                "fontSize": {
+                  "desktop": 24,
+                  "tablet": 16,
+                  "mobile": 12
+                },
+                "lineHeight": 1.5,
+                "fontFamily": "Montserrat, sans-serif"
+              }
+            },
+            "description": {
+              "bg": {
+                "color": "#fff"
+              },
+              "colors": "#4a5568",
+              "typo": {
+                "fontWeight": 500,
+                "fontSize": {
+                  "desktop": 16,
+                  "tablet": 14,
+                  "mobile": 12
+                },
+                "lineHeight": 1.5,
+                "fontFamily": "Montserrat, sans-serif"
+              }
+            },
+            "icon": {
+              "width": "40px",
+              "height": "40px",
+              "colors": "#4a5568"
+            }
+          }
+        }
+        draft['column'] = {
+          "type": "object",
+          "default": {
+            "desktop": 3,
+            "tablet": 2,
+            "mobile": 1,
+            "gap": "16px"
+          }
+        }
+
+        break;
+      case 'themeThree':
+        draft['Styles'] = {
+          "SectionContainer": {
+            "bg": {
+              "color": "#fff"
+            },
+            "padding": {
+              "desktop": {
+                "top": "32px",
+                "left": "24px",
+                "bottom": "32px",
+                "right": "24px"
+              },
+              "tablet": {
+                "top": "32px",
+                "left": "24px",
+                "bottom": "32px",
+                "right": "24px"
+              },
+              "mobile": {
+                "top": "32px",
+                "left": "24px",
+                "bottom": "32px",
+                "right": "24px"
+              }
+            },
+            "border": {
+              "width": "",
+              "color": "",
+              "style": "",
+              "side": "",
+              "radius": "16px"
+            }
+          },
+          "cardBody": {
+            "title": {
+              "bg": {
+                "color": "#fff"
+              },
+              "colors": "#1a202c",
+              "typo": {
+                "fontWeight": 600,
+                "fontSize": {
+                  "desktop": 24,
+                  "tablet": 16,
+                  "mobile": 12
+                },
+                "lineHeight": 1.5,
+                "fontFamily": "Montserrat, sans-serif"
+              }
+            },
+            "description": {
+              "bg": {
+                "color": "#fff"
+              },
+              "colors": "#4a5568",
+              "typo": {
+                "fontWeight": 500,
+                "fontSize": {
+                  "desktop": 16,
+                  "tablet": 14,
+                  "mobile": 12
+                },
+                "lineHeight": 1.5,
+                "fontFamily": "Montserrat, sans-serif"
+              }
+            },
+            "icon": {
+              "width": "40px",
+              "height": "40px",
+              "colors": "#4a5568"
+            }
+          }
+        }
+        draft['column'] = {
+          "type": "object",
+          "default": {
+            "desktop": 3,
+            "tablet": 2,
+            "mobile": 1,
+            "gap": "16px"
+          }
+        }
+        break;
+    }
+
+
   })
 
 }

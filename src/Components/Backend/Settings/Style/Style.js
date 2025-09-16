@@ -79,9 +79,9 @@ const Style = ({ attributes, setAttributes, device }) => {
         />
         <ColorControl
           label='Icon Color'
-          value={icon?.colors}
+          value={icon?.color}
           onChange={(v) => setAttributes({
-            Styles: updateData(Styles, v, 'cardBody', 'icon', 'colors')
+            Styles: updateData(Styles, v, 'cardBody', 'icon', 'color')
           })}
         />
         <hr />

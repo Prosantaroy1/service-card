@@ -11,7 +11,7 @@ export default function ServiceThemeTwo({ attributes, setAttributes }) {
                         return (
                             <div key={index} className="card-horizontal" onClick={() => setAttributes({ activeIndex: index })}>
                                 <div className="icon-section">
-                                    <p
+                                    <span
                                         className="icon"
                                         dangerouslySetInnerHTML={{ __html: item?.icon }}
                                     />

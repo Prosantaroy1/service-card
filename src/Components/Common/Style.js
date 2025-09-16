@@ -17,7 +17,7 @@ const Style = ({ attributes, id }) => {
 	const layoutSl = `${wrapperSl} .cards-grid`;
 	const cardVerticalSl = `${layoutSl} .card-vertical`;
 	const IconWrapperSl = `${wrapperSl} .icon-wrapper`
-	const IconSl = `${cardVerticalSl} .card-vertical .icon svg`
+	const IconSl = `${cardVerticalSl} .icon svg`
 	const TitleSl = `${wrapperSl} .card-title`;
 	const DescriptionSl = `${wrapperSl} .card-description`;
 
@@ -58,9 +58,9 @@ const Style = ({ attributes, id }) => {
 		  border: ${getBorderCSS(SectionContainer?.border)};
 		}
 		${IconSl}{
-		  color: ${icon?.colors}
-	      width: ${icon?.width}
-	      height: ${icon?.height}
+		  fill: ${icon?.color};
+	      width: ${icon?.width};
+	      height: ${icon?.height};
 		}
 
 		${TitleSl}{

@@ -12,7 +12,7 @@ export default function ServiceThemeOne({ attributes, setAttributes }) {
                         return (
                             <div key={index} className="card-vertical" onClick={() => setAttributes({ activeIndex: index })}>
                                 <div className="icon-wrapper">
-                                    <p
+                                    <span
                                         className="icon"
                                         dangerouslySetInnerHTML={{ __html: item?.icon }}
                                     />

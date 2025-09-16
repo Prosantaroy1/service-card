@@ -47,7 +47,7 @@
   margin: 0 auto 24px auto;
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeOne .card-vertical .icon svg {
-  color: white;
+  fill: white;
   width: 40px;
   height: 40px;
 }
@@ -101,7 +101,7 @@
   transform: skewX(-15deg);
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-horizontal .icon svg {
-  color: white;
+  fill: white;
   width: 48px;
   height: 48px;
   z-index: 2;
@@ -169,7 +169,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-diagonal .icon svg {
-  color: #667eea;
+  fill: #667eea;
   width: 32px;
   height: 32px;
 }

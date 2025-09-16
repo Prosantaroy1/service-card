@@ -11,7 +11,7 @@ export default function ServiceThemeThree({ attributes, setAttributes }) {
                             <div key={index} className="card-diagonal" onClick={() => setAttributes({ activeIndex: index })}>
                                 <div className="diagonal-bg"></div>
                                 <div className="icon-wrapper">
-                                    <p
+                                    <span
                                         className="icon"
                                         dangerouslySetInnerHTML={{ __html: item?.icon }}
                                     />
