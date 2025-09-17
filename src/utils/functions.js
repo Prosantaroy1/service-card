@@ -108,6 +108,7 @@ export const themeSwitch = (theme, attributes) => {
             "gap": "16px"
           }
         }
+
         break;
       case 'themeTwo':
         draft['Styles'] = {

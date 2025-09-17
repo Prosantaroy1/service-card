@@ -8,7 +8,7 @@ export default function ServiceThemeThree({ attributes, setAttributes }) {
                 {
                     serviceData?.length > 0 && serviceData.map((item, index) => {
                         return (
-                            <div key={index} className="card-diagonal" onClick={() => setAttributes({ activeIndex: index })}>
+                            <div key={index} className="card-vertical" onClick={() => setAttributes({ activeIndex: index })}>
                                 <div className="diagonal-bg"></div>
                                 <div className="icon-wrapper">
                                     <span

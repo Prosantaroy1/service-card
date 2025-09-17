@@ -913,6 +913,9 @@ const Style = ({
 		  padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(SectionContainer?.padding?.desktop)};
 		  border: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBorderCSS)(SectionContainer?.border)};
 		}
+		${IconWrapperSl}{
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(icon?.bg)}
+		}
 		${IconSl}{
 		  fill: ${icon?.color};
 	      width: ${icon?.width};
@@ -1013,7 +1016,7 @@ function ServiceThemeThree({
   }, serviceData?.length > 0 && serviceData.map((item, index) => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       key: index,
-      className: "card-diagonal",
+      className: "card-vertical",
       onClick: () => setAttributes({
         activeIndex: index
       })
@@ -1067,12 +1070,12 @@ function ServiceThemeTwo({
   }, serviceData?.length > 0 && serviceData.map((item, index) => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       key: index,
-      className: "card-horizontal",
+      className: "card-vertical",
       onClick: () => setAttributes({
         activeIndex: index
       })
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "icon-section"
+      className: "icon-wrapper"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "icon",
       dangerouslySetInnerHTML: {

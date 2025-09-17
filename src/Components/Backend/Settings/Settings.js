@@ -2,14 +2,17 @@
 import { InspectorControls, BlockControls } from '@wordpress/block-editor';
 import { TabPanel, } from '@wordpress/components';
 import { tabController } from '../../../../../bpl-tools/utils/functions';
-import { generalStyleTabs } from '../../../utils/options';
+import { blocks, generalStyleTabs } from '../../../utils/options';
 import General from './General/General';
 import Style from './Style/Style';
+import { BplBlockPreview } from '../../../../../bpl-tools/Components';
 
 
-const Settings = ({ attributes, setAttributes, device }) => {
+const Settings = ({ attributes, setAttributes, device, clientId }) => {
 
+	console.log(clientId)
 
+	const { theme } = attributes || {};
 
 	return <>
 		<InspectorControls>
@@ -30,7 +33,11 @@ const Settings = ({ attributes, setAttributes, device }) => {
 
 
 		<BlockControls>
-
+			<BplBlockPreview
+				blocks={blocks}
+				clientId={clientId}
+				value={theme}
+			/>
 		</BlockControls>
 	</>;
 };

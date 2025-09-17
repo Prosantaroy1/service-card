@@ -68,7 +68,7 @@
   gap: 30px;
   margin-bottom: 60px;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-horizontal {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical {
   background: #fff;
   border-radius: 20px;
   padding: 0;
@@ -78,11 +78,11 @@
   display: flex;
   min-height: 200px;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-horizontal:hover {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical:hover {
   transform: scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-horizontal .icon-section {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical .icon-wrapper {
   background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
   width: 120px;
   display: flex;
@@ -90,7 +90,7 @@
   justify-content: center;
   position: relative;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-horizontal .icon-section::after {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical .icon-wrapper::after {
   content: "";
   position: absolute;
   top: 0;
@@ -100,27 +100,27 @@
   background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
   transform: skewX(-15deg);
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-horizontal .icon svg {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical .icon svg {
   fill: white;
   width: 48px;
   height: 48px;
   z-index: 2;
   position: relative;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-horizontal .content-section {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical .content-section {
   flex: 1;
   padding: 32px 32px 32px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-horizontal .card-title {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical .card-title {
   font-size: 1.4rem;
   font-weight: 700;
   color: #1a202c;
   margin-bottom: 12px;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-horizontal .card-description {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical .card-description {
   color: #4a5568;
   font-size: 0.95rem;
   line-height: 1.6;
@@ -131,7 +131,7 @@
   gap: 30px;
   margin-bottom: 60px;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-diagonal {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical {
   background: #fff;
   border-radius: 12px;
   padding: 0;
@@ -141,11 +141,11 @@
   position: relative;
   min-height: 280px;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-diagonal:hover {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical:hover {
   transform: translateY(-5px) rotate(1deg);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-diagonal .diagonal-bg {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .diagonal-bg {
   position: absolute;
   top: 0;
   right: 0;
@@ -154,7 +154,7 @@
   background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
   transform: rotate(45deg) translate(35px, -35px);
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-diagonal .icon-wrapper {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .icon-wrapper {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -168,31 +168,31 @@
   z-index: 2;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-diagonal .icon svg {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .icon svg {
   fill: #667eea;
   width: 32px;
   height: 32px;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-diagonal .content-area {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .content-area {
   padding: 32px 24px 24px 24px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-diagonal .card-title {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .card-title {
   font-size: 1.6rem;
   font-weight: 700;
   color: #1a202c;
   margin-bottom: 16px;
   margin-right: 80px;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-diagonal .card-description {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .card-description {
   color: #4a5568;
   font-size: 1rem;
   line-height: 1.7;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-diagonal .accent-line {
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .accent-line {
   width: 60px;
   height: 4px;
   background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);

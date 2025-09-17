@@ -15,7 +15,7 @@ const General = ({ attributes, setAttributes }) => {
       <PanelBody
         className="bPlPanelBody"
         title={__("Theme Switch", "service-card")}
-        initialOpen={false}
+        initialOpen={true}
       >
         <SelectControl
           labelPosition="left"

@@ -82,7 +82,7 @@ $primaryColor: #4527a4;
 				margin-bottom: 60px;
 			}
 
-			.card-horizontal {
+			.card-vertical {
 				background: #fff;
 				border-radius: 20px;
 				padding: 0;
@@ -93,12 +93,12 @@ $primaryColor: #4527a4;
 				min-height: 200px;
 			}
 
-			.card-horizontal:hover {
+			.card-vertical:hover {
 				transform: scale(1.02);
 				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 			}
 
-			.card-horizontal .icon-section {
+			.card-vertical .icon-wrapper {
 				background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
 				width: 120px;
 				display: flex;
@@ -107,7 +107,7 @@ $primaryColor: #4527a4;
 				position: relative;
 			}
 
-			.card-horizontal .icon-section::after {
+			.card-vertical .icon-wrapper::after {
 				content: '';
 				position: absolute;
 				top: 0;
@@ -118,7 +118,7 @@ $primaryColor: #4527a4;
 				transform: skewX(-15deg);
 			}
 
-			.card-horizontal .icon svg {
+			.card-vertical .icon svg {
 				fill: white;
 				width: 48px;
 				height: 48px;
@@ -126,7 +126,7 @@ $primaryColor: #4527a4;
 				position: relative;
 			}
 
-			.card-horizontal .content-section {
+			.card-vertical .content-section {
 				flex: 1;
 				padding: 32px 32px 32px 40px;
 				display: flex;
@@ -134,14 +134,14 @@ $primaryColor: #4527a4;
 				justify-content: center;
 			}
 
-			.card-horizontal .card-title {
+			.card-vertical .card-title {
 				font-size: 1.4rem;
 				font-weight: 700;
 				color: #1a202c;
 				margin-bottom: 12px;
 			}
 
-			.card-horizontal .card-description {
+			.card-vertical .card-description {
 				color: #4a5568;
 				font-size: 0.95rem;
 				line-height: 1.6;
@@ -156,7 +156,7 @@ $primaryColor: #4527a4;
 				margin-bottom: 60px;
 			}
 
-			.card-diagonal {
+			.card-vertical {
 				background: #fff;
 				border-radius: 12px;
 				padding: 0;
@@ -167,12 +167,12 @@ $primaryColor: #4527a4;
 				min-height: 280px;
 			}
 
-			.card-diagonal:hover {
+			.card-vertical:hover {
 				transform: translateY(-5px) rotate(1deg);
 				box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 			}
 
-			.card-diagonal .diagonal-bg {
+			.card-vertical .diagonal-bg {
 				position: absolute;
 				top: 0;
 				right: 0;
@@ -182,7 +182,7 @@ $primaryColor: #4527a4;
 				transform: rotate(45deg) translate(35px, -35px);
 			}
 
-			.card-diagonal .icon-wrapper {
+			.card-vertical .icon-wrapper {
 				position: absolute;
 				top: 20px;
 				right: 20px;
@@ -197,13 +197,13 @@ $primaryColor: #4527a4;
 				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 			}
 
-			.card-diagonal .icon svg {
+			.card-vertical .icon svg {
 				fill: #667eea;
 				width: 32px;
 				height: 32px;
 			}
 
-			.card-diagonal .content-area {
+			.card-vertical .content-area {
 				padding: 32px 24px 24px 24px;
 				height: 100%;
 				display: flex;
@@ -211,7 +211,7 @@ $primaryColor: #4527a4;
 				justify-content: flex-end;
 			}
 
-			.card-diagonal .card-title {
+			.card-vertical .card-title {
 				font-size: 1.6rem;
 				font-weight: 700;
 				color: #1a202c;
@@ -219,13 +219,13 @@ $primaryColor: #4527a4;
 				margin-right: 80px;
 			}
 
-			.card-diagonal .card-description {
+			.card-vertical .card-description {
 				color: #4a5568;
 				font-size: 1rem;
 				line-height: 1.7;
 			}
 
-			.card-diagonal .accent-line {
+			.card-vertical .accent-line {
 				width: 60px;
 				height: 4px;
 				background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);

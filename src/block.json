@@ -88,7 +88,7 @@
 				"cardBody": {
 					"title": {
 						"bg": {
-							"color": "#fff"
+							"color": "transparent"
 						},
 						"colors": "#1a202c",
 						"typo": {
@@ -103,9 +103,6 @@
 						}
 					},
 					"description": {
-						"bg": {
-							"color": "#fff"
-						},
 						"colors": "#4a5568",
 						"typo": {
 							"fontWeight": 500,
@@ -121,7 +118,10 @@
 					"icon": {
 						"width": "40px",
 						"height": "40px",
-						"color": "#4a5568"
+						"color": "#fff",
+						"bg": {
+							"color": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+						}
 					}
 				}
 			}

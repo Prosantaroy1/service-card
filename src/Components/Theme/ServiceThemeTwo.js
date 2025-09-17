@@ -9,8 +9,8 @@ export default function ServiceThemeTwo({ attributes, setAttributes }) {
                 {
                     serviceData?.length > 0 && serviceData.map((item, index) => {
                         return (
-                            <div key={index} className="card-horizontal" onClick={() => setAttributes({ activeIndex: index })}>
-                                <div className="icon-section">
+                            <div key={index} className="card-vertical" onClick={() => setAttributes({ activeIndex: index })}>
+                                <div className="icon-wrapper">
                                     <span
                                         className="icon"
                                         dangerouslySetInnerHTML={{ __html: item?.icon }}

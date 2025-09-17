@@ -57,6 +57,9 @@ const Style = ({ attributes, id }) => {
 		  padding: ${getBoxCSS(SectionContainer?.padding?.desktop)};
 		  border: ${getBorderCSS(SectionContainer?.border)};
 		}
+		${IconWrapperSl}{
+		  ${getBackgroundCSS(icon?.bg)}
+		}
 		${IconSl}{
 		  fill: ${icon?.color};
 	      width: ${icon?.width};

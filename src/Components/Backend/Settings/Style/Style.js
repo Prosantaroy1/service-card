@@ -64,7 +64,7 @@ const Style = ({ attributes, setAttributes, device }) => {
       <PanelBody className='bPlPanelBody' title={__('Card Content Styles', 'service-card')} initialOpen={false}>
 
         <HeightControl
-          label="Icon Width"
+          label="Icon Width & Height"
           value={icon?.width}
           onChange={(v) => setAttributes({
             Styles: updateData(Styles, v, 'cardBody', 'icon', 'width')
@@ -84,6 +84,14 @@ const Style = ({ attributes, setAttributes, device }) => {
             Styles: updateData(Styles, v, 'cardBody', 'icon', 'color')
           })}
         />
+        <Background
+          label="Icon Background"
+          value={icon?.bg}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'cardBody', 'icon', 'bg')
+          })}
+        />
+
         <hr />
         <Typography
           label='Title Typography'
