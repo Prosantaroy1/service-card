@@ -95,7 +95,7 @@ export const themeSwitch = (theme, attributes) => {
             "icon": {
               "width": "40px",
               "height": "40px",
-              "colors": "#4a5568"
+              "colors": "#fff"
             }
           }
         }
@@ -175,7 +175,7 @@ export const themeSwitch = (theme, attributes) => {
             "icon": {
               "width": "40px",
               "height": "40px",
-              "colors": "#4a5568"
+              "colors": "#fff"
             }
           }
         }
@@ -255,7 +255,7 @@ export const themeSwitch = (theme, attributes) => {
             "icon": {
               "width": "40px",
               "height": "40px",
-              "colors": "#4a5568"
+              "colors": "#4bdd97ff"
             }
           }
         }

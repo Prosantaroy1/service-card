@@ -9,8 +9,6 @@ import ClipBoard from '../../shortcode/ClipBoard';
 const Edit = (props) => {
   const { attributes, setAttributes, clientId, device, postId, postType } = props;
 
-  console.log(postType)
-
   return (
     <>
       <Settings {...{ attributes, setAttributes }} clientId={clientId} device={device} />

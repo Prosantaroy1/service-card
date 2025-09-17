@@ -14,7 +14,6 @@
   margin-bottom: 60px;
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceContainer .card-vertical .icon svg {
-  fill: #667eea;
   width: 32px;
   height: 32px;
 }
@@ -64,6 +63,9 @@
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeOne .card-vertical .card-title {
   margin-bottom: 16px;
 }
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeOne .card-vertical .icon svg {
+  fill: #fff;
+}
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical {
   background: #fff;
   border-radius: 20px;
@@ -109,6 +111,9 @@
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical .card-title {
   margin-bottom: 12px;
+}
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical .icon svg {
+  fill: #fff;
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical {
   background: #fff;
@@ -157,6 +162,9 @@
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .card-title {
   margin-bottom: 16px;
   margin-right: 80px;
+}
+.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .icon svg {
+  fill: #405236;
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .accent-line {
   width: 60px;

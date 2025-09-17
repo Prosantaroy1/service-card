@@ -38,7 +38,7 @@ const General = ({ attributes, setAttributes }) => {
             "id": 1,
             "title": "Web Development",
             "description": "Build modern, responsive websites and web applications using the latest technologies and best practices to deliver exceptional user experiences.",
-            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-code\"><path d=\"m16 18 6-6-6-6\"/><path d=\"m8 6-6 6 6 6\"/></svg>"
+            "icon": "<svg stroke='currentColor' fill='currentColor' stroke-width='0' viewBox='0 0 16 16' height='1em' width='1em' xmlns='http: //www.w3.org/2000/svg'><path fill-rule='evenodd' d='M5.854 4.146a.5.5 0 010 .708L2.707 8l3.147 3.146a.5.5 0 01-.708.708l-3.5-3.5a.5.5 0 010-.708l3.5-3.5a.5.5 0 01.708 0zm4.292 0a.5.5 0 000 .708L13.293 8l-3.147 3.146a.5.5 0 00.708.708l3.5-3.5a.5.5 0 000-.708l-3.5-3.5a.5.5 0 00-.708 0z' clip-rule='evenodd'></path></svg>"
           }}
           ItemSettings={ServiceItemPanel}
           design="sortable"

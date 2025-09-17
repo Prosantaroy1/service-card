@@ -18,7 +18,6 @@ $primaryColor: #4527a4;
 			}
 
 			.card-vertical .icon svg {
-				fill: #667eea;
 				width: 32px;
 				height: 32px;
 			}
@@ -79,6 +78,10 @@ $primaryColor: #4527a4;
 				margin-bottom: 16px;
 			}
 
+			.card-vertical .icon svg {
+				fill: #fff;
+			}
+
 		}
 
 		.serviceThemeTwo {
@@ -136,6 +139,10 @@ $primaryColor: #4527a4;
 				margin-bottom: 12px;
 			}
 
+			.card-vertical .icon svg {
+				fill: #fff;
+			}
+
 		}
 
 		.serviceThemeThree {
@@ -191,6 +198,10 @@ $primaryColor: #4527a4;
 			.card-vertical .card-title {
 				margin-bottom: 16px;
 				margin-right: 80px;
+			}
+
+			.card-vertical .icon svg {
+				fill: #405236;
 			}
 
 			.card-vertical .accent-line {
