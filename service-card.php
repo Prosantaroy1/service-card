@@ -32,7 +32,6 @@ if (!class_exists('PREFIXPlugin')) {
 			add_action('manage_service_card_posts_custom_column', [$this, 'sc_manageCustomColumn'], 10, 2);
 			add_action('admin_enqueue_scripts', [$this, 'sc_admin_enqueue_script']);
 			add_action('admin_menu', [$this, 'add_service_card_submenu']);
-			// redirect active plugin dashboard
 			add_action('admin_init', [$this, 'sc_plugin_redirect_after_activation']);
 			register_activation_hook(__FILE__, [$this, 'sc_plugin_activate_redirect']);
 		}
@@ -92,8 +91,6 @@ if (!class_exists('PREFIXPlugin')) {
 				'show_in_admin_bar' => true,
 
 			]);
-
-
 		}
 		//custome column add CPT
 		function sc_setCustomColumn_edit($column)
@@ -104,7 +101,6 @@ if (!class_exists('PREFIXPlugin')) {
 			$column['publisher'] = 'Publisher';
 			return $column;
 		}
-
 		//column data CPT
 		function sc_manageCustomColumn($column_name, $post_id)
 		{
@@ -166,8 +162,8 @@ if (!class_exists('PREFIXPlugin')) {
 			global $typenow;
 
 			if ('service_card' === $typenow) {
-				wp_enqueue_script('shortcode-js', SCD_DIR_URL . './build/shortcode.js', [], SCD_DIR_PATH, true);
-				wp_enqueue_style('shortcode-css', SCD_DIR_URL . './build/shortcode.css', SCD_DIR_PATH);
+				wp_enqueue_script('shortcode-js', SCD_DIR_URL . './build/shortcode.js', [], SCD_VERSION, true);
+				wp_enqueue_style('shortcode-css', SCD_DIR_URL . './build/shortcode.css', SCD_VERSION);
 
 			}
 		}
@@ -292,7 +288,7 @@ if (!class_exists('PREFIXPlugin')) {
 
 		function sc_plugin_redirect_after_activation()
 		{
-			if (is_admin() && get_option('sc_plugin_redirect_after_activation')) {
+			if (get_option('sc_plugin_redirect_after_activation')) {
 
 				delete_option('sc_plugin_redirect_after_activation');
 

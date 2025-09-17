@@ -3,7 +3,6 @@ import { updateData } from '../../../../../bpl-tools/utils/functions';
 import { IconLibrary } from '../../../../../bpl-tools/Components';
 
 const ServiceItemPanel = ({ attributes, setAttributes, index }) => {
-
     const { serviceData = [] } = attributes || {};
 
     const { title, description, icon } = serviceData[index];
@@ -17,6 +16,7 @@ const ServiceItemPanel = ({ attributes, setAttributes, index }) => {
                     serviceData: updateData(serviceData, v, index, 'icon')
                 })}
             />
+
             <TextControl
                 label='Card Title'
                 value={title}

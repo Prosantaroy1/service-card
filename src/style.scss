@@ -8,13 +8,35 @@ $primaryColor: #4527a4;
 	}
 
 	.service-card-wrapper {
-		.serviceThemeOne {
+
+		.serviceContainer {
 			.cards-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 				gap: 30px;
 				margin-bottom: 60px;
 			}
+
+			.card-vertical .icon svg {
+				fill: #667eea;
+				width: 32px;
+				height: 32px;
+			}
+
+			.card-vertical .card-title {
+				font-size: 1.6rem;
+				font-weight: 700;
+				color: #1a202c;
+			}
+
+			.card-vertical .card-description {
+				color: #4a5568;
+				font-size: 1rem;
+				line-height: 1.7;
+			}
+		}
+
+		.serviceThemeOne {
 
 			.card-vertical {
 				background: #fff;
@@ -53,39 +75,18 @@ $primaryColor: #4527a4;
 				margin: 0 auto 24px auto;
 			}
 
-			.card-vertical .icon svg {
-				fill: white;
-				width: 40px;
-				height: 40px;
-
-			}
-
 			.card-vertical .card-title {
-				font-size: 1.5rem;
-				font-weight: 600;
-				color: #1a202c;
 				margin-bottom: 16px;
 			}
 
-			.card-vertical .card-description {
-				color: #4a5568;
-				font-size: 1rem;
-				line-height: 1.6;
-			}
 		}
 
 		.serviceThemeTwo {
-			.cards-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-				gap: 30px;
-				margin-bottom: 60px;
-			}
 
 			.card-vertical {
 				background: #fff;
 				border-radius: 20px;
-				padding: 0;
+				padding: 0px 0px 0px 0px;
 				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 				transition: all 0.4s ease;
 				overflow: hidden;
@@ -119,9 +120,6 @@ $primaryColor: #4527a4;
 			}
 
 			.card-vertical .icon svg {
-				fill: white;
-				width: 48px;
-				height: 48px;
 				z-index: 2;
 				position: relative;
 			}
@@ -135,27 +133,12 @@ $primaryColor: #4527a4;
 			}
 
 			.card-vertical .card-title {
-				font-size: 1.4rem;
-				font-weight: 700;
-				color: #1a202c;
 				margin-bottom: 12px;
 			}
 
-			.card-vertical .card-description {
-				color: #4a5568;
-				font-size: 0.95rem;
-				line-height: 1.6;
-			}
 		}
 
 		.serviceThemeThree {
-			.cards-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-				gap: 30px;
-				margin-bottom: 60px;
-			}
-
 			.card-vertical {
 				background: #fff;
 				border-radius: 12px;
@@ -197,12 +180,6 @@ $primaryColor: #4527a4;
 				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 			}
 
-			.card-vertical .icon svg {
-				fill: #667eea;
-				width: 32px;
-				height: 32px;
-			}
-
 			.card-vertical .content-area {
 				padding: 32px 24px 24px 24px;
 				height: 100%;
@@ -212,17 +189,8 @@ $primaryColor: #4527a4;
 			}
 
 			.card-vertical .card-title {
-				font-size: 1.6rem;
-				font-weight: 700;
-				color: #1a202c;
 				margin-bottom: 16px;
 				margin-right: 80px;
-			}
-
-			.card-vertical .card-description {
-				color: #4a5568;
-				font-size: 1rem;
-				line-height: 1.7;
 			}
 
 			.card-vertical .accent-line {
@@ -235,6 +203,4 @@ $primaryColor: #4527a4;
 
 		}
 	}
-
-
 }

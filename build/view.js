@@ -923,7 +923,7 @@ const Style = ({
 		}
 
 		${TitleSl}{
-		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(title?.bg)}
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(title?.bg?.color)}
 		  color: ${title?.colors}
 		}
 		${DescriptionSl}{

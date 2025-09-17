@@ -7,11 +7,26 @@
 .wp-block-scd-service-card * {
   box-sizing: border-box;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeOne .cards-grid {
+.wp-block-scd-service-card .service-card-wrapper .serviceContainer .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
   margin-bottom: 60px;
+}
+.wp-block-scd-service-card .service-card-wrapper .serviceContainer .card-vertical .icon svg {
+  fill: #667eea;
+  width: 32px;
+  height: 32px;
+}
+.wp-block-scd-service-card .service-card-wrapper .serviceContainer .card-vertical .card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a202c;
+}
+.wp-block-scd-service-card .service-card-wrapper .serviceContainer .card-vertical .card-description {
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeOne .card-vertical {
   background: #fff;
@@ -46,32 +61,13 @@
   justify-content: center;
   margin: 0 auto 24px auto;
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeOne .card-vertical .icon svg {
-  fill: white;
-  width: 40px;
-  height: 40px;
-}
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeOne .card-vertical .card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1a202c;
   margin-bottom: 16px;
-}
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeOne .card-vertical .card-description {
-  color: #4a5568;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  margin-bottom: 60px;
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical {
   background: #fff;
   border-radius: 20px;
-  padding: 0;
+  padding: 0px 0px 0px 0px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
   overflow: hidden;
@@ -101,9 +97,6 @@
   transform: skewX(-15deg);
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical .icon svg {
-  fill: white;
-  width: 48px;
-  height: 48px;
   z-index: 2;
   position: relative;
 }
@@ -115,21 +108,7 @@
   justify-content: center;
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical .card-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #1a202c;
   margin-bottom: 12px;
-}
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeTwo .card-vertical .card-description {
-  color: #4a5568;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  margin-bottom: 60px;
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical {
   background: #fff;
@@ -168,11 +147,6 @@
   z-index: 2;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .icon svg {
-  fill: #667eea;
-  width: 32px;
-  height: 32px;
-}
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .content-area {
   padding: 32px 24px 24px 24px;
   height: 100%;
@@ -181,16 +155,8 @@
   justify-content: flex-end;
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .card-title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #1a202c;
   margin-bottom: 16px;
   margin-right: 80px;
-}
-.wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .card-description {
-  color: #4a5568;
-  font-size: 1rem;
-  line-height: 1.7;
 }
 .wp-block-scd-service-card .service-card-wrapper .serviceThemeThree .card-vertical .accent-line {
   width: 60px;

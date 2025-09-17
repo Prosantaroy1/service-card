@@ -3,10 +3,13 @@ import Settings from "./Settings/Settings";
 import Style from "../Common/Style";
 import { withSelect } from "@wordpress/data";
 import ThemeSwitch from '../Theme/ThemeSwitch/ThemeSwitch';
+import ClipBoard from '../../shortcode/ClipBoard';
 
 
 const Edit = (props) => {
-  const { attributes, setAttributes, clientId, device } = props;
+  const { attributes, setAttributes, clientId, device, postId, postType } = props;
+
+  console.log(postType)
 
   return (
     <>
@@ -16,6 +19,9 @@ const Edit = (props) => {
         <Style attributes={attributes} id={`block-${clientId}`} device={device} />
 
         <div className='service-card-wrapper'>
+          {postType == "service_card" && (
+            <ClipBoard shortcode={`[service_card id=${postId}]`} />
+          )}
           <ThemeSwitch {...{ attributes, setAttributes }} />
         </div>
 
@@ -26,9 +32,12 @@ const Edit = (props) => {
 // export default Edit;
 
 export default withSelect((select) => {
-  const { getDeviceType } = select("core/editor");
-  return {
+  const { getDeviceType, getCurrentPostId, getCurrentPostType } =
+    select("core/editor");
 
-    device: getDeviceType()?.toLowerCase(),
+  return {
+    device: getDeviceType ? getDeviceType()?.toLowerCase() : "desktop",
+    postType: getCurrentPostType(),
+    postId: getCurrentPostId(),
   };
 })(Edit);

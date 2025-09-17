@@ -99,15 +99,10 @@ export const themeSwitch = (theme, attributes) => {
             }
           }
         }
-        draft['column'] = {
-          "type": "object",
-          "default": {
-            "desktop": 3,
-            "tablet": 2,
-            "mobile": 1,
-            "gap": "16px"
-          }
-        }
+        draft['column']["desktop"] = 3
+        draft['column']["tablet"] = 2
+        draft['column']["mobile"] = 1
+        draft['column']["gap"] = "16px"
 
         break;
       case 'themeTwo':
@@ -118,22 +113,22 @@ export const themeSwitch = (theme, attributes) => {
             },
             "padding": {
               "desktop": {
-                "top": "32px",
-                "left": "24px",
-                "bottom": "32px",
-                "right": "24px"
+                "top": "0px",
+                "left": "0px",
+                "bottom": "0px",
+                "right": "0px"
               },
               "tablet": {
-                "top": "32px",
-                "left": "24px",
-                "bottom": "32px",
-                "right": "24px"
+                "top": "0px",
+                "left": "0px",
+                "bottom": "0px",
+                "right": "0px"
               },
               "mobile": {
-                "top": "32px",
-                "left": "24px",
-                "bottom": "32px",
-                "right": "24px"
+                "top": "0px",
+                "left": "0px",
+                "bottom": "0px",
+                "right": "0px"
               }
             },
             "border": {
@@ -184,15 +179,10 @@ export const themeSwitch = (theme, attributes) => {
             }
           }
         }
-        draft['column'] = {
-          "type": "object",
-          "default": {
-            "desktop": 3,
-            "tablet": 2,
-            "mobile": 1,
-            "gap": "16px"
-          }
-        }
+        draft['column']["desktop"] = 3
+        draft['column']["tablet"] = 2
+        draft['column']["mobile"] = 1
+        draft['column']["gap"] = "16px"
 
         break;
       case 'themeThree':
@@ -269,15 +259,10 @@ export const themeSwitch = (theme, attributes) => {
             }
           }
         }
-        draft['column'] = {
-          "type": "object",
-          "default": {
-            "desktop": 3,
-            "tablet": 2,
-            "mobile": 1,
-            "gap": "16px"
-          }
-        }
+        draft['column']["desktop"] = 3
+        draft['column']["tablet"] = 2
+        draft['column']["mobile"] = 1
+        draft['column']["gap"] = "16px"
         break;
     }
 

@@ -7,10 +7,7 @@ import General from './General/General';
 import Style from './Style/Style';
 import { BplBlockPreview } from '../../../../../bpl-tools/Components';
 
-
 const Settings = ({ attributes, setAttributes, device, clientId }) => {
-
-	console.log(clientId)
 
 	const { theme } = attributes || {};
 

@@ -67,7 +67,7 @@ const Style = ({ attributes, id }) => {
 		}
 
 		${TitleSl}{
-		  ${getBackgroundCSS(title?.bg)}
+		  ${getBackgroundCSS(title?.bg?.color)}
 		  color: ${title?.colors}
 		}
 		${DescriptionSl}{
