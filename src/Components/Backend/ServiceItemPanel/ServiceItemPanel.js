@@ -23,6 +23,7 @@ const ServiceItemPanel = ({ attributes, setAttributes, index }) => {
                 onChange={(v) => setAttributes({
                     serviceData: updateData(serviceData, v, index, 'title')
                 })}
+                __nextHasNoMarginBottom={true}
             />
             <TextareaControl
                 label='Card SubTitle'
@@ -30,6 +31,7 @@ const ServiceItemPanel = ({ attributes, setAttributes, index }) => {
                 onChange={(v) => setAttributes({
                     serviceData: updateData(serviceData, v, index, 'description')
                 })}
+                __nextHasNoMarginBottom={true}
             />
         </>
     );

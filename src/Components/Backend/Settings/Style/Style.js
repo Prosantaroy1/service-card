@@ -5,14 +5,11 @@ import { HeightControl } from '@wordpress/block-editor'
 import { updateData } from '../../../../utils/functions';
 import { BorderControl } from '../../../../../../bpl-tools/Components/Deprecated';
 
-
-
 const Style = ({ attributes, setAttributes, device }) => {
 
   const { Styles = {}, column = {}, theme } = attributes || {};
   const { SectionContainer, cardBody } = Styles;
   const { title, description, icon } = cardBody;
-
 
   return (
     <>
@@ -66,6 +63,7 @@ const Style = ({ attributes, setAttributes, device }) => {
       </PanelBody>
       <PanelBody className='bPlPanelBody' title={__('Content Styles', 'service-card')} initialOpen={false}>
         <ToggleControl
+          __nextHasNoMarginBottom={true}
           label="Icon Show & Hidden"
           checked={icon?.show}
           onChange={(v) => setAttributes({

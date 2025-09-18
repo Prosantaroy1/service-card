@@ -27,7 +27,6 @@ const Edit = (props) => {
     </>
   );
 };
-// export default Edit;
 
 export default withSelect((select) => {
   const { getDeviceType, getCurrentPostId, getCurrentPostType } =

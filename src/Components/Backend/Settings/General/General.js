@@ -4,7 +4,6 @@ import { themeSwitch } from "../../../../utils/functions";
 import { themeOption } from '../../../../utils/options';
 import { ItemsPanel } from '../../../../../../bpl-tools/Components';
 import ServiceItemPanel from '../../ServiceItemPanel/ServiceItemPanel';
-//import { ColorControl } from '../../../../../../bpl-tools/Components';
 
 const General = ({ attributes, setAttributes }) => {
 
@@ -22,6 +21,7 @@ const General = ({ attributes, setAttributes }) => {
           value={theme}
           options={themeOption}
           onChange={(v) => setAttributes(themeSwitch(v, attributes))}
+          __next40pxDefaultSize={true}
         />
 
       </PanelBody>
