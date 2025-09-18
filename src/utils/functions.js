@@ -52,17 +52,17 @@ export const themeSwitch = (theme, attributes) => {
               }
             },
             "border": {
-              "width": "",
+              "width": "0px",
+              "style": "solid",
               "color": "",
-              "style": "",
-              "side": "",
+              "side": "all",
               "radius": "16px"
             }
           },
           "cardBody": {
             "title": {
               "bg": {
-                "color": "#fff"
+                "color": "transparent"
               },
               "colors": "#1a202c",
               "typo": {
@@ -93,9 +93,9 @@ export const themeSwitch = (theme, attributes) => {
               }
             },
             "icon": {
-              "width": "40px",
-              "height": "40px",
-              "colors": "#fff"
+              "size": "40px",
+              "colors": "#fff",
+              "show": false
             }
           }
         }
@@ -132,10 +132,10 @@ export const themeSwitch = (theme, attributes) => {
               }
             },
             "border": {
-              "width": "",
+              "width": "0px",
+              "style": "solid",
               "color": "",
-              "style": "",
-              "side": "",
+              "side": "all",
               "radius": "16px"
             }
           },
@@ -173,9 +173,9 @@ export const themeSwitch = (theme, attributes) => {
               }
             },
             "icon": {
-              "width": "40px",
-              "height": "40px",
-              "colors": "#fff"
+              "size": "40px",
+              "colors": "#fff",
+              "show": false
             }
           }
         }
@@ -212,10 +212,10 @@ export const themeSwitch = (theme, attributes) => {
               }
             },
             "border": {
-              "width": "",
+              "width": "0px",
+              "style": "solid",
               "color": "",
-              "style": "",
-              "side": "",
+              "side": "all",
               "radius": "16px"
             }
           },
@@ -253,9 +253,9 @@ export const themeSwitch = (theme, attributes) => {
               }
             },
             "icon": {
-              "width": "40px",
-              "height": "40px",
-              "colors": "#4bdd97ff"
+              "size": "40px",
+              "colors": "#4bdd97ff",
+              "show": false
             }
           }
         }

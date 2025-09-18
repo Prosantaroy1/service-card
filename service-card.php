@@ -155,7 +155,6 @@ if (!class_exists('PREFIXPlugin')) {
 			$blocks = parse_blocks($post->post_content);
 			return render_block($blocks[0]);
 		}
-
 		//data enqueueshortcode
 		function sc_admin_enqueue_script()
 		{
@@ -172,14 +171,14 @@ if (!class_exists('PREFIXPlugin')) {
 		{
 			add_submenu_page(
 				'edit.php?post_type=service_card',
-				'Card Settings',
-				'Settings',
+				'Card Demo',
+				'Demo',
 				'manage_options',
-				'service_card_settings',
-				[$this, 'sc_service_card_settings_page']
+				'service_card_Demo',
+				[$this, 'sc_service_card_Demo_page']
 			);
 		}
-		function sc_service_card_settings_page()
+		function sc_service_card_Demo_page()
 		{
 
 			?>
@@ -246,7 +245,7 @@ if (!class_exists('PREFIXPlugin')) {
 				}
 			</style>
 
-			<h3>Admin Dashboard Setting</h3>
+			<h3>Admin Dashboard </h3>
 			<div class="dashboard-container">
 				<!-- Left side -->
 				<div class="dashboard-text">
@@ -285,14 +284,13 @@ if (!class_exists('PREFIXPlugin')) {
 			add_option('sc_plugin_redirect_after_activation', true);
 		}
 
-
 		function sc_plugin_redirect_after_activation()
 		{
 			if (get_option('sc_plugin_redirect_after_activation')) {
 
 				delete_option('sc_plugin_redirect_after_activation');
 
-				$redirect_url = admin_url('edit.php?post_type=service_card&page=service_card_settings');
+				$redirect_url = admin_url('edit.php?post_type=service_card&page=service_card_Demo');
 				wp_safe_redirect($redirect_url);
 				exit;
 			}

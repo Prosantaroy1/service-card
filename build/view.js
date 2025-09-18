@@ -865,14 +865,10 @@ const Style = ({
     description,
     icon
   } = cardBody;
-
-  // console.log('dynamic', title?.colors)
-  // console.log('dynamic', title?.typo)
-
   const mainSl = `#${id}`;
   const blockSl = `${mainSl} .service-card-wrapper`;
   const wrapperSl = `${blockSl} .serviceContainer`;
-  const layoutSl = `${wrapperSl} .cards-grid`;
+  const layoutSl = `${wrapperSl} .card-grid`;
   const cardVerticalSl = `${layoutSl} .card-vertical`;
   const IconWrapperSl = `${wrapperSl} .icon-wrapper`;
   const IconSl = `${cardVerticalSl} .icon svg`;
@@ -911,23 +907,26 @@ const Style = ({
 		${cardVerticalSl}{
 		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(SectionContainer?.bg)}
 		  padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(SectionContainer?.padding?.desktop)};
-		  border: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBorderCSS)(SectionContainer?.border)};
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBorderCSS)(SectionContainer?.border)};
+		  box-shadow: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getMultiShadowCSS)(SectionContainer?.shadow)};
 		}
 		${IconWrapperSl}{
 		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(icon?.bg)}
 		}
 		${IconSl}{
 		  fill: ${icon?.color};
-	      width: ${icon?.width};
-	      height: ${icon?.height};
+	      width: ${icon?.size};
+	      height: ${icon?.size};
 		}
 
 		${TitleSl}{
-		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(title?.bg?.color)}
-		  color: ${title?.colors}
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(title?.bg)}
+		  color: ${title?.colors};
+		  text-align : ${title?.textAlign};
 		}
 		${DescriptionSl}{
-		 color: ${description?.colors}
+		 color: ${description?.colors};
+		 text-align: ${description?.textAlign}
 		}
 
 
@@ -959,12 +958,19 @@ function ServiceThemeOne({
   setAttributes
 }) {
   const {
-    serviceData = []
+    serviceData = [],
+    Styles = {}
   } = attributes;
+  const {
+    cardBody
+  } = Styles;
+  const {
+    icon
+  } = cardBody;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "serviceContainer serviceThemeOne"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cards-grid"
+    className: "card-grid"
   }, serviceData?.length > 0 && serviceData.map((item, index) => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       key: index,
@@ -972,7 +978,7 @@ function ServiceThemeOne({
       onClick: () => setAttributes({
         activeIndex: index
       })
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, icon?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "icon-wrapper"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "icon",
@@ -1007,12 +1013,19 @@ function ServiceThemeThree({
   setAttributes
 }) {
   const {
-    serviceData = []
+    serviceData = [],
+    Styles = {}
   } = attributes;
+  const {
+    cardBody
+  } = Styles;
+  const {
+    icon
+  } = cardBody;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "serviceContainer serviceThemeThree"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cards-grid"
+    className: "card-grid"
   }, serviceData?.length > 0 && serviceData.map((item, index) => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       key: index,
@@ -1022,7 +1035,7 @@ function ServiceThemeThree({
       })
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "diagonal-bg"
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }), icon?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "icon-wrapper"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "icon",
@@ -1061,12 +1074,19 @@ function ServiceThemeTwo({
   setAttributes
 }) {
   const {
-    serviceData = []
+    serviceData = [],
+    Styles = {}
   } = attributes;
+  const {
+    cardBody
+  } = Styles;
+  const {
+    icon
+  } = cardBody;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "serviceContainer serviceThemeTwo"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cards-grid"
+    className: "card-grid"
   }, serviceData?.length > 0 && serviceData.map((item, index) => {
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       key: index,
@@ -1074,7 +1094,7 @@ function ServiceThemeTwo({
       onClick: () => setAttributes({
         activeIndex: index
       })
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, icon?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "icon-wrapper"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "icon",

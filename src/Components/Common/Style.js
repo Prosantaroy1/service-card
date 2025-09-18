@@ -1,5 +1,5 @@
 import { deskBreakpoint, mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
-import { getBackgroundCSS, getBorderCSS, getBoxCSS, getTypoCSS, } from "../../../../bpl-tools/utils/getCSS"
+import { getBackgroundCSS, getBorderCSS, getBoxCSS, getMultiShadowCSS, getTypoCSS, } from "../../../../bpl-tools/utils/getCSS"
 
 const Style = ({ attributes, id }) => {
 
@@ -7,21 +7,16 @@ const Style = ({ attributes, id }) => {
 	const { SectionContainer, cardBody } = Styles;
 	const { title, description, icon } = cardBody;
 
-	// console.log('dynamic', title?.colors)
-	// console.log('dynamic', title?.typo)
-
 	const mainSl = `#${id}`;
 	const blockSl = `${mainSl} .service-card-wrapper`;
 	const wrapperSl = `${blockSl} .serviceContainer`;
 
-	const layoutSl = `${wrapperSl} .cards-grid`;
+	const layoutSl = `${wrapperSl} .card-grid`;
 	const cardVerticalSl = `${layoutSl} .card-vertical`;
-	const IconWrapperSl = `${wrapperSl} .icon-wrapper`
-	const IconSl = `${cardVerticalSl} .icon svg`
+	const IconWrapperSl = `${wrapperSl} .icon-wrapper`;
+	const IconSl = `${cardVerticalSl} .icon svg`;
 	const TitleSl = `${wrapperSl} .card-title`;
 	const DescriptionSl = `${wrapperSl} .card-description`;
-
-
 
 	return <style dangerouslySetInnerHTML={{
 		__html: `
@@ -55,23 +50,26 @@ const Style = ({ attributes, id }) => {
 		${cardVerticalSl}{
 		  ${getBackgroundCSS(SectionContainer?.bg)}
 		  padding: ${getBoxCSS(SectionContainer?.padding?.desktop)};
-		  border: ${getBorderCSS(SectionContainer?.border)};
+		  ${getBorderCSS(SectionContainer?.border)};
+		  box-shadow: ${getMultiShadowCSS(SectionContainer?.shadow)};
 		}
 		${IconWrapperSl}{
 		  ${getBackgroundCSS(icon?.bg)}
 		}
 		${IconSl}{
 		  fill: ${icon?.color};
-	      width: ${icon?.width};
-	      height: ${icon?.height};
+	      width: ${icon?.size};
+	      height: ${icon?.size};
 		}
 
 		${TitleSl}{
-		  ${getBackgroundCSS(title?.bg?.color)}
-		  color: ${title?.colors}
+		  ${getBackgroundCSS(title?.bg)}
+		  color: ${title?.colors};
+		  text-align : ${title?.textAlign};
 		}
 		${DescriptionSl}{
-		 color: ${description?.colors}
+		 color: ${description?.colors};
+		 text-align: ${description?.textAlign}
 		}
 
 

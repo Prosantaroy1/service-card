@@ -8,6 +8,9 @@
   text-decoration: none;
   font-weight: 700;
 }
+.bBlocksInspectorInfo .mt-10 {
+  margin-top: 10px;
+}
 
 .wp-block-scd-service-card .selectHelp {
   color: #616063;

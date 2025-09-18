@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
-import { PanelBody, PanelRow, RangeControl, __experimentalUnitControl as UnitControl } from '@wordpress/components';
-import { Background, BoxControl, ColorControl, Device, Label, Typography } from '../../../../../../bpl-tools/Components';
+import { PanelBody, PanelRow, RangeControl, ToggleControl, __experimentalUnitControl as UnitControl } from '@wordpress/components';
+import { Background, BButtonGroup, BoxControl, ColorControl, Device, Label, ShadowControl, Typography } from '../../../../../../bpl-tools/Components';
 import { HeightControl } from '@wordpress/block-editor'
 import { updateData } from '../../../../utils/functions';
 import { BorderControl } from '../../../../../../bpl-tools/Components/Deprecated';
@@ -9,13 +9,9 @@ import { BorderControl } from '../../../../../../bpl-tools/Components/Deprecated
 
 const Style = ({ attributes, setAttributes, device }) => {
 
-  const { Styles = {}, column = {} } = attributes || {};
-
+  const { Styles = {}, column = {}, theme } = attributes || {};
   const { SectionContainer, cardBody } = Styles;
-
   const { title, description, icon } = cardBody;
-
-  console.log('style---', icon?.width, icon?.height, icon?.colors)
 
 
   return (
@@ -59,22 +55,28 @@ const Style = ({ attributes, setAttributes, device }) => {
             Styles: updateData(Styles, v, 'SectionContainer', 'border')
           })}
         />
+        <ShadowControl
+          label='Box Shadow'
+          value={SectionContainer?.shadow}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'SectionContainer', 'shadow')
+          })}
+        />
 
       </PanelBody>
-      <PanelBody className='bPlPanelBody' title={__('Card Content Styles', 'service-card')} initialOpen={false}>
-
-        <HeightControl
-          label="Icon Width & Height"
-          value={icon?.width}
+      <PanelBody className='bPlPanelBody' title={__('Content Styles', 'service-card')} initialOpen={false}>
+        <ToggleControl
+          label="Icon Show & Hidden"
+          checked={icon?.show}
           onChange={(v) => setAttributes({
-            Styles: updateData(Styles, v, 'cardBody', 'icon', 'width')
+            Styles: updateData(Styles, v, 'cardBody', 'icon', 'show')
           })}
         />
         <HeightControl
-          label="Icon height"
-          value={icon?.height}
+          label="Icon Size"
+          value={icon?.size}
           onChange={(v) => setAttributes({
-            Styles: updateData(Styles, v, 'cardBody', 'icon', 'height')
+            Styles: updateData(Styles, v, 'cardBody', 'icon', 'size')
           })}
         />
         <ColorControl
@@ -114,6 +116,33 @@ const Style = ({ attributes, setAttributes, device }) => {
             Styles: updateData(Styles, v, 'cardBody', 'title', 'colors')
           })}
         />
+        {
+          theme === 'default' || theme === 'themeThree' ? (
+            <BButtonGroup
+              className="mt10"
+              label={__('Text Align', 'service-card')}
+              options={[
+                { label: __('Left', 'service-card'), value: 'left' },
+                { label: __('Center', 'service-card'), value: 'center' },
+                { label: __('Right', 'service-card'), value: 'right' },
+              ]}
+              value={title?.textAlign}
+              onChange={(v) =>
+                setAttributes({
+                  Styles: updateData(Styles, v, 'cardBody', 'title', 'textAlign')
+                })
+              }
+              activeBg="#007cba"
+              inactiveColor="#555"
+              activeColor="#fff"
+              borderRadius="4px"
+              paddingX="12px"
+              paddingY="6px"
+              fontSize="13px"
+              fontWeight={500}
+            />
+          ) : null
+        }
         <hr />
         <Typography
           label='description Typography'
@@ -129,6 +158,33 @@ const Style = ({ attributes, setAttributes, device }) => {
             Styles: updateData(Styles, v, 'cardBody', 'description', 'colors')
           })}
         />
+        {
+          theme === 'default' || theme === 'themeThree' ? (
+            <BButtonGroup
+              className="mt10"
+              label={__('Text Align', 'service-card')}
+              options={[
+                { label: __('Left', 'service-card'), value: 'left' },
+                { label: __('Center', 'service-card'), value: 'center' },
+                { label: __('Right', 'service-card'), value: 'right' },
+              ]}
+              value={description?.textAlign}
+              onChange={(v) =>
+                setAttributes({
+                  Styles: updateData(Styles, v, 'cardBody', 'description', 'textAlign')
+                })
+              }
+              activeBg="#007cba"
+              inactiveColor="#555"
+              activeColor="#fff"
+              borderRadius="4px"
+              paddingX="12px"
+              paddingY="6px"
+              fontSize="13px"
+              fontWeight={500}
+            />
+          ) : null
+        }
 
       </PanelBody>
     </>
