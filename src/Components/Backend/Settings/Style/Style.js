@@ -70,27 +70,31 @@ const Style = ({ attributes, setAttributes, device }) => {
             Styles: updateData(Styles, v, 'cardBody', 'icon', 'show')
           })}
         />
-        <HeightControl
-          label="Icon Size"
-          value={icon?.size}
-          onChange={(v) => setAttributes({
-            Styles: updateData(Styles, v, 'cardBody', 'icon', 'size')
-          })}
-        />
-        <ColorControl
-          label='Icon Color'
-          value={icon?.color}
-          onChange={(v) => setAttributes({
-            Styles: updateData(Styles, v, 'cardBody', 'icon', 'color')
-          })}
-        />
-        <Background
-          label="Icon Background"
-          value={icon?.bg}
-          onChange={(v) => setAttributes({
-            Styles: updateData(Styles, v, 'cardBody', 'icon', 'bg')
-          })}
-        />
+        {
+          icon?.show === false && (<>
+            <HeightControl
+              label="Icon Size"
+              value={icon?.size}
+              onChange={(v) => setAttributes({
+                Styles: updateData(Styles, v, 'cardBody', 'icon', 'size')
+              })}
+            />
+            <ColorControl
+              label='Icon Color'
+              value={icon?.color}
+              onChange={(v) => setAttributes({
+                Styles: updateData(Styles, v, 'cardBody', 'icon', 'color')
+              })}
+            />
+            <Background
+              label="Icon Background"
+              value={icon?.bg}
+              onChange={(v) => setAttributes({
+                Styles: updateData(Styles, v, 'cardBody', 'icon', 'bg')
+              })}
+            />
+          </>)
+        }
 
         <hr />
         <Typography

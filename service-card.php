@@ -162,7 +162,13 @@ if (!class_exists('PREFIXPlugin')) {
 
 			if ('service_card' === $typenow) {
 				wp_enqueue_script('shortcode-js', SCD_DIR_URL . './build/shortcode.js', [], SCD_VERSION, true);
-				wp_enqueue_style('shortcode-css', SCD_DIR_URL . './build/shortcode.css', SCD_VERSION);
+				wp_enqueue_style(
+					'shortcode-css',
+					SCD_DIR_URL . './build/shortcode.css',
+					[], 
+					SCD_VERSION 
+				);
+
 
 			}
 		}
