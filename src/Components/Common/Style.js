@@ -1,7 +1,7 @@
 import { deskBreakpoint, mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
 import { getBackgroundCSS, getBorderCSS, getBoxCSS, getColorsCSS, getMultiShadowCSS, getTypoCSS, } from "../../../../bpl-tools/utils/getCSS"
 
-const Style = ({ attributes, id }) => {
+const Style = ({ attributes, id, device }) => {
 
 	const { Styles = {}, column = {}, align } = attributes || {};
 	const { SectionContainer, cardBody } = Styles;
@@ -16,8 +16,10 @@ const Style = ({ attributes, id }) => {
 	const IconWrapperSl = `${wrapperSl} .icon-wrapper`;
 	const IconlineSl = `${layoutSl} .icon-wrapper::after`
 	const IconSl = `${cardVerticalSl} .icon svg`;
+	const line = `${cardVerticalSl} .accent-line`
 	const TitleSl = `${wrapperSl} .card-title`;
 	const DescriptionSl = `${wrapperSl} .card-description`;
+
 
 	return <style dangerouslySetInnerHTML={{
 		__html: `
@@ -50,10 +52,11 @@ const Style = ({ attributes, id }) => {
 
 		${cardVerticalSl}{
 		  ${getBackgroundCSS(SectionContainer?.bg)}
-		  padding: ${getBoxCSS(SectionContainer?.padding?.desktop)};
+		  padding: ${getBoxCSS(SectionContainer?.padding?.[device])};
 		  ${getBorderCSS(SectionContainer?.border)};
 		  box-shadow: ${getMultiShadowCSS(SectionContainer?.shadow)};
 		}
+		
 		${IconWrapperSl}{
 		  ${getBackgroundCSS(icon?.bg)}
 		}
@@ -68,11 +71,35 @@ const Style = ({ attributes, id }) => {
 
 		${TitleSl}{
 		  text-align : ${title?.textAlign};
+		  padding: ${getBoxCSS(title?.padding?.desktop)};
+		  margin: ${getBoxCSS(title?.margin?.[device])};
 		  ${getColorsCSS(title?.colors)}
 		}
+		${tabBreakpoint}{ 
+		   ${TitleSl}{ 
+			   padding: ${getBoxCSS(title?.padding?.tablet)};
+			} 
+		}
+		${mobileBreakpoint}{ 
+		   ${TitleSl}{ 
+			   padding: ${getBoxCSS(title?.padding?.mobile)};
+			} 
+		}
+			
 		${DescriptionSl}{
-		 text-align: ${description?.textAlign};
-		 ${getColorsCSS(description?.colors)}
+		   text-align: ${description?.textAlign};
+		   padding: ${getBoxCSS(description?.padding?.desktop)};
+		   ${getColorsCSS(description?.colors)}
+		}
+		${tabBreakpoint}{ 
+		   ${DescriptionSl}{ 
+			   padding: ${getBoxCSS(description?.padding?.tablet)};
+			} 
+		}
+		${mobileBreakpoint}{ 
+		   ${DescriptionSl}{ 
+			   padding: ${getBoxCSS(description?.padding?.mobile)};
+			} 
 		}
 
 

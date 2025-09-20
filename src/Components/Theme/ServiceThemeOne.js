@@ -3,7 +3,7 @@ export default function ServiceThemeOne({ attributes, setAttributes }) {
 
     const { serviceData = [], Styles = {} } = attributes;
     const { cardBody } = Styles;
-    const { icon } = cardBody;
+    const { icon, title, description } = cardBody;
 
 
     return (
@@ -22,8 +22,25 @@ export default function ServiceThemeOne({ attributes, setAttributes }) {
                                         />
                                     </div>
                                 }
-                                <h3 className="card-title">{item?.title}</h3>
-                                <p className="card-description">{item?.description}</p>
+                                {
+                                    title?.show === false &&
+                                    <h3 className="card-title">{item?.title}</h3>
+                                }
+                                {
+                                    description?.show === false &&
+                                    <p className="card-description">{item?.description}</p>
+                                }
+                                {
+                                    icon?.position === true &&
+                                    <div className="icon-wrapper">
+                                        <span
+                                            className="icon"
+                                            dangerouslySetInnerHTML={{ __html: item?.icon }}
+                                        />
+                                    </div>
+                                }
+
+
                             </div>
                         )
                     })

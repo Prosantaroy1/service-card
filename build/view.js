@@ -849,7 +849,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const Style = ({
   attributes,
-  id
+  id,
+  device
 }) => {
   const {
     Styles = {},
@@ -873,6 +874,7 @@ const Style = ({
   const IconWrapperSl = `${wrapperSl} .icon-wrapper`;
   const IconlineSl = `${layoutSl} .icon-wrapper::after`;
   const IconSl = `${cardVerticalSl} .icon svg`;
+  const line = `${cardVerticalSl} .accent-line`;
   const TitleSl = `${wrapperSl} .card-title`;
   const DescriptionSl = `${wrapperSl} .card-description`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
@@ -907,10 +909,11 @@ const Style = ({
 
 		${cardVerticalSl}{
 		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(SectionContainer?.bg)}
-		  padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(SectionContainer?.padding?.desktop)};
+		  padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(SectionContainer?.padding?.[device])};
 		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBorderCSS)(SectionContainer?.border)};
 		  box-shadow: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getMultiShadowCSS)(SectionContainer?.shadow)};
 		}
+		
 		${IconWrapperSl}{
 		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(icon?.bg)}
 		}
@@ -925,11 +928,35 @@ const Style = ({
 
 		${TitleSl}{
 		  text-align : ${title?.textAlign};
+		  padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(title?.padding?.desktop)};
+		  margin: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(title?.margin?.[device])};
 		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(title?.colors)}
 		}
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{ 
+		   ${TitleSl}{ 
+			   padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(title?.padding?.tablet)};
+			} 
+		}
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{ 
+		   ${TitleSl}{ 
+			   padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(title?.padding?.mobile)};
+			} 
+		}
+			
 		${DescriptionSl}{
-		 text-align: ${description?.textAlign};
-		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(description?.colors)}
+		   text-align: ${description?.textAlign};
+		   padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(description?.padding?.desktop)};
+		   ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(description?.colors)}
+		}
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{ 
+		   ${DescriptionSl}{ 
+			   padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(description?.padding?.tablet)};
+			} 
+		}
+		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.mobileBreakpoint}{ 
+		   ${DescriptionSl}{ 
+			   padding: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(description?.padding?.mobile)};
+			} 
 		}
 
 
@@ -968,7 +995,9 @@ function ServiceThemeOne({
     cardBody
   } = Styles;
   const {
-    icon
+    icon,
+    title,
+    description
   } = cardBody;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "serviceContainer serviceThemeOne"
@@ -988,11 +1017,18 @@ function ServiceThemeOne({
       dangerouslySetInnerHTML: {
         __html: item?.icon
       }
-    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    })), title?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
       className: "card-title"
-    }, item?.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    }, item?.title), description?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       className: "card-description"
-    }, item?.description));
+    }, item?.description), icon?.position === true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "icon-wrapper"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+      className: "icon",
+      dangerouslySetInnerHTML: {
+        __html: item?.icon
+      }
+    })));
   })));
 }
 
@@ -1023,7 +1059,9 @@ function ServiceThemeThree({
     cardBody
   } = Styles;
   const {
-    icon
+    icon,
+    title,
+    description
   } = cardBody;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "serviceContainer serviceThemeThree"
@@ -1047,11 +1085,11 @@ function ServiceThemeThree({
       }
     })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "content-area"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    }, cardBody?.line === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "accent-line"
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    }), title?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
       className: "card-title"
-    }, item?.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    }, item?.title), description?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       className: "card-description"
     }, item?.description)));
   })));
@@ -1084,7 +1122,9 @@ function ServiceThemeTwo({
     cardBody
   } = Styles;
   const {
-    icon
+    icon,
+    title,
+    description
   } = cardBody;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "serviceContainer serviceThemeTwo"
@@ -1106,9 +1146,9 @@ function ServiceThemeTwo({
       }
     })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "content-section"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    }, title?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
       className: "card-title"
-    }, item?.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    }, item?.title), description?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       className: "card-description"
     }, item?.description)));
   })));

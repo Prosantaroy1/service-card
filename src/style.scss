@@ -111,6 +111,7 @@ $primaryColor: #4527a4;
 					align-items: center;
 					justify-content: center;
 					position: relative;
+					z-index: 1;
 
 					&::after {
 						content: '';
@@ -139,6 +140,11 @@ $primaryColor: #4527a4;
 
 				.card-title {
 					margin-bottom: 12px;
+					z-index: 4;
+				}
+
+				.card-description {
+					z-index: 4;
 				}
 
 				.icon svg {

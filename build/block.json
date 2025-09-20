@@ -111,6 +111,47 @@
             "colors": {
               "color": "#1a202c",
               "bg": ""
+            },
+            "show": false,
+            "padding": {
+              "desktop": {
+                "top": "0px",
+                "left": "0px",
+                "bottom": "0px",
+                "right": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "left": "0px",
+                "bottom": "0px",
+                "right": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "left": "0px",
+                "bottom": "0px",
+                "right": "0px"
+              }
+            },
+            "margin": {
+              "desktop": {
+                "top": "0px",
+                "left": "0px",
+                "bottom": "0px",
+                "right": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "left": "0px",
+                "bottom": "0px",
+                "right": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "left": "0px",
+                "bottom": "0px",
+                "right": "0px"
+              }
             }
           },
           "description": {
@@ -128,7 +169,28 @@
               "lineHeight": 1.5,
               "fontFamily": "Montserrat, sans-serif"
             },
-            "textAlign": "center"
+            "textAlign": "center",
+            "padding": {
+              "desktop": {
+                "top": "0px",
+                "left": "0px",
+                "bottom": "0px",
+                "right": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "left": "0px",
+                "bottom": "0px",
+                "right": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "left": "0px",
+                "bottom": "0px",
+                "right": "0px"
+              }
+            },
+            "show": false
           },
           "icon": {
             "size": "40px",
@@ -136,8 +198,10 @@
             "bg": {
               "color": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
             },
-            "show": false
-          }
+            "show": false,
+            "position": false
+          },
+          "line": false
         }
       }
     },

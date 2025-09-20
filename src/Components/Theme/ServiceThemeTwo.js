@@ -3,7 +3,7 @@ export default function ServiceThemeTwo({ attributes, setAttributes }) {
 
     const { serviceData = [], Styles = {} } = attributes;
     const { cardBody } = Styles;
-    const { icon } = cardBody;
+    const { icon, title, description } = cardBody;
 
     return (
         <div className='serviceContainer serviceThemeTwo'>
@@ -23,8 +23,14 @@ export default function ServiceThemeTwo({ attributes, setAttributes }) {
                                 }
 
                                 <div className="content-section">
-                                    <h3 className="card-title">{item?.title}</h3>
-                                    <p className="card-description">{item?.description}</p>
+                                    {
+                                        title?.show === false &&
+                                        <h3 className="card-title">{item?.title}</h3>
+                                    }
+                                    {
+                                        description?.show === false &&
+                                        <p className="card-description">{item?.description}</p>
+                                    }
                                 </div>
                             </div>
                         )

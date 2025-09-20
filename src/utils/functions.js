@@ -61,10 +61,6 @@ export const themeSwitch = (theme, attributes) => {
           },
           "cardBody": {
             "title": {
-              "bg": {
-                "color": "transparent"
-              },
-              "colors": "#1a202c",
               "typo": {
                 "fontWeight": 600,
                 "fontSize": {
@@ -74,13 +70,59 @@ export const themeSwitch = (theme, attributes) => {
                 },
                 "lineHeight": 1.5,
                 "fontFamily": "Montserrat, sans-serif"
+              },
+              "textAlign": "center",
+              "show": false,
+              "colors": {
+                "color": "#1a202c",
+                "bg": ""
+              },
+              "margin": {
+                "desktop": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "tablet": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "mobile": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                }
+              },
+              "padding": {
+                "desktop": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "tablet": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "mobile": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                }
               }
             },
             "description": {
-              "bg": {
-                "color": "#fff"
+              "colors": {
+                "color": "#1a202c",
+                "bg": ""
               },
-              "colors": "#4a5568",
               "typo": {
                 "fontWeight": 500,
                 "fontSize": {
@@ -90,11 +132,36 @@ export const themeSwitch = (theme, attributes) => {
                 },
                 "lineHeight": 1.5,
                 "fontFamily": "Montserrat, sans-serif"
+              },
+              "textAlign": "center",
+              "show": false,
+              "padding": {
+                "desktop": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "tablet": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "mobile": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                }
               }
             },
             "icon": {
               "size": "40px",
-              "colors": "#fff",
+              "color": "white",
+              "bg": {
+                "color": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+              },
               "show": false
             }
           }
@@ -141,10 +208,6 @@ export const themeSwitch = (theme, attributes) => {
           },
           "cardBody": {
             "title": {
-              "bg": {
-                "color": "#fff"
-              },
-              "colors": "#1a202c",
               "typo": {
                 "fontWeight": 600,
                 "fontSize": {
@@ -154,13 +217,60 @@ export const themeSwitch = (theme, attributes) => {
                 },
                 "lineHeight": 1.5,
                 "fontFamily": "Montserrat, sans-serif"
+              },
+              "textAlign": "left",
+              "colors": {
+                "color": "#1a202c",
+                "bg": ""
+              },
+              "margin": {
+                "desktop": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "tablet": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "mobile": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                }
+              },
+              "show": false,
+              "padding": {
+                "desktop": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "tablet": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "mobile": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                }
               }
             },
             "description": {
-              "bg": {
-                "color": "#fff"
+              "colors": {
+                "color": "#1a202c",
+                "bg": ""
               },
-              "colors": "#4a5568",
+              "show": false,
               "typo": {
                 "fontWeight": 500,
                 "fontSize": {
@@ -170,11 +280,35 @@ export const themeSwitch = (theme, attributes) => {
                 },
                 "lineHeight": 1.5,
                 "fontFamily": "Montserrat, sans-serif"
+              },
+              "textAlign": "left",
+              "padding": {
+                "desktop": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "tablet": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "mobile": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                }
               }
             },
             "icon": {
               "size": "40px",
-              "colors": "#fff",
+              "color": "white",
+              "bg": {
+                "color": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+              },
               "show": false
             }
           }
@@ -221,10 +355,6 @@ export const themeSwitch = (theme, attributes) => {
           },
           "cardBody": {
             "title": {
-              "bg": {
-                "color": "#fff"
-              },
-              "colors": "#1a202c",
               "typo": {
                 "fontWeight": 600,
                 "fontSize": {
@@ -234,13 +364,59 @@ export const themeSwitch = (theme, attributes) => {
                 },
                 "lineHeight": 1.5,
                 "fontFamily": "Montserrat, sans-serif"
+              },
+              "show": false,
+              "textAlign": "left",
+              "colors": {
+                "color": "#1a202c",
+                "bg": ""
+              },
+              "margin": {
+                "desktop": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "tablet": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "mobile": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                }
+              },
+              "padding": {
+                "desktop": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "tablet": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "mobile": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                }
               }
             },
             "description": {
-              "bg": {
-                "color": "#fff"
+              "colors": {
+                "color": "#1a202c",
+                "bg": ""
               },
-              "colors": "#4a5568",
               "typo": {
                 "fontWeight": 500,
                 "fontSize": {
@@ -250,13 +426,39 @@ export const themeSwitch = (theme, attributes) => {
                 },
                 "lineHeight": 1.5,
                 "fontFamily": "Montserrat, sans-serif"
+              },
+              "show": false,
+              "textAlign": "left",
+              "padding": {
+                "desktop": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "tablet": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                },
+                "mobile": {
+                  "top": "0px",
+                  "left": "0px",
+                  "bottom": "0px",
+                  "right": "0px"
+                }
               }
             },
             "icon": {
               "size": "40px",
-              "colors": "#4bdd97ff",
+              "color": "white",
+              "bg": {
+                "color": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+              },
               "show": false
-            }
+            },
+            "line": false
           }
         }
         draft['column']["desktop"] = 3
