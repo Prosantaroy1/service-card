@@ -34,6 +34,13 @@ export default function ServiceThemeThree({ attributes, setAttributes }) {
                                         description?.show === false &&
                                         <p className="card-description">{item?.description}</p>
                                     }
+                                    {
+                                        cardBody?.line === false &&
+                                        <div className="card-footer">
+                                            <button className="card-btn">Learn More</button>
+                                        </div>
+                                    }
+
                                 </div>
                             </div>
                         )

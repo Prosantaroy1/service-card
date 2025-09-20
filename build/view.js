@@ -920,6 +920,9 @@ const Style = ({
 		${IconlineSl}{
 			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(icon?.bg)}
 		}
+		${line}{
+		  width: ${cardBody?.lined?.width};
+		}
 		${IconSl}{
 		  fill: ${icon?.color};
 	      width: ${icon?.size};
@@ -1091,7 +1094,11 @@ function ServiceThemeThree({
       className: "card-title"
     }, item?.title), description?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       className: "card-description"
-    }, item?.description)));
+    }, item?.description), cardBody?.line === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "card-footer"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+      className: "card-btn"
+    }, "Learn More"))));
   })));
 }
 

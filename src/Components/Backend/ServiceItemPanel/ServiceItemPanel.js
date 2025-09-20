@@ -10,6 +10,7 @@ const ServiceItemPanel = ({ attributes, setAttributes, index }) => {
     return (
         <>
             <IconLibrary
+                className='mt20'
                 label='Card Icon'
                 value={icon}
                 onChange={(v) => setAttributes({

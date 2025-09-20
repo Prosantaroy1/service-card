@@ -201,7 +201,13 @@
             "show": false,
             "position": false
           },
-          "line": false
+          "line": false,
+          "lined": {
+            "width": "60px"
+          },
+          "button": {
+            "show": false
+          }
         }
       }
     },

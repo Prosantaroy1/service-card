@@ -458,7 +458,10 @@ export const themeSwitch = (theme, attributes) => {
               },
               "show": false
             },
-            "line": false
+            "line": false,
+            "lined": {
+              "width": "60px"
+            }
           }
         }
         draft['column']["desktop"] = 3

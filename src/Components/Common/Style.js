@@ -63,6 +63,9 @@ const Style = ({ attributes, id, device }) => {
 		${IconlineSl}{
 			${getBackgroundCSS(icon?.bg)}
 		}
+		${line}{
+		  width: ${cardBody?.lined?.width};
+		}
 		${IconSl}{
 		  fill: ${icon?.color};
 	      width: ${icon?.size};

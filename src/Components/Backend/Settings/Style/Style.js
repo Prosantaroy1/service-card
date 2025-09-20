@@ -9,9 +9,9 @@ const Style = ({ attributes, setAttributes, device }) => {
 
   const { Styles = {}, column = {}, theme } = attributes || {};
   const { SectionContainer, cardBody } = Styles;
-  const { title, description, icon } = cardBody;
+  const { title, description, icon, lined } = cardBody;
 
-  console.log('line', cardBody?.line)
+  console.log('line', lined?.width)
 
   return (
     <>
@@ -118,6 +118,16 @@ const Style = ({ attributes, setAttributes, device }) => {
               Styles: updateData(Styles, v, 'cardBody', 'line')
             })}
           />
+          {
+            cardBody?.line === false && <HeightControl
+              label="Line width"
+              value={cardBody?.lined?.width}
+              onChange={(v) => setAttributes({
+                Styles: updateData(Styles, v, 'cardBody', 'lined', 'width')
+              })}
+            />
+          }
+
 
         </PanelBody>
       }
@@ -255,6 +265,16 @@ const Style = ({ attributes, setAttributes, device }) => {
             />
           </>) : null
         }
+      </PanelBody>
+      <PanelBody className='bPlPanelBody' title={__('Button Styles', 'service-card')} initialOpen={false}>
+        <ToggleControl
+          __nextHasNoMarginBottom={true}
+          label="button Show & Hidden"
+          checked={cardBody?.line}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'cardBody', 'button')
+          })}
+        />
       </PanelBody>
     </>
   )
