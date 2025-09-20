@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, PanelRow, RangeControl, ToggleControl, __experimentalUnitControl as UnitControl } from '@wordpress/components';
-import { Background, BButtonGroup, BoxControl, ColorControl, Device, Label, ShadowControl, Typography } from '../../../../../../bpl-tools/Components';
+import { Background, BButtonGroup, BoxControl, ColorControl, ColorsControl, Device, Label, ShadowControl, Typography } from '../../../../../../bpl-tools/Components';
 import { HeightControl } from '@wordpress/block-editor'
 import { updateData } from '../../../../utils/functions';
 import { BorderControl } from '../../../../../../bpl-tools/Components/Deprecated';
@@ -104,20 +104,14 @@ const Style = ({ attributes, setAttributes, device }) => {
             Styles: updateData(Styles, v, 'cardBody', 'title', 'typo')
           })}
         />
-        <Background
-          label="Title Background"
-          value={title?.bg}
-          onChange={(v) => setAttributes({
-            Styles: updateData(Styles, v, 'cardBody', 'title', 'bg')
-          })}
-        />
-        <ColorControl
+        <ColorsControl
           label='Title Color'
           value={title?.colors}
           onChange={(v) => setAttributes({
             Styles: updateData(Styles, v, 'cardBody', 'title', 'colors')
           })}
         />
+
         {
           theme === 'default' || theme === 'themeThree' ? (
             <BButtonGroup
@@ -153,8 +147,8 @@ const Style = ({ attributes, setAttributes, device }) => {
             Styles: updateData(Styles, v, 'cardBody', 'description', 'typo')
           })}
         />
-        <ColorControl
-          label='description Color'
+        <ColorsControl
+          label='Title Color'
           value={description?.colors}
           onChange={(v) => setAttributes({
             Styles: updateData(Styles, v, 'cardBody', 'description', 'colors')

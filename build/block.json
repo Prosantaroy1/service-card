@@ -97,10 +97,6 @@
         },
         "cardBody": {
           "title": {
-            "bg": {
-              "color": "transparent"
-            },
-            "colors": "#1a202c",
             "typo": {
               "fontWeight": 600,
               "fontSize": {
@@ -111,10 +107,17 @@
               "lineHeight": 1.5,
               "fontFamily": "Montserrat, sans-serif"
             },
-            "textAlign": "center"
+            "textAlign": "center",
+            "colors": {
+              "color": "#1a202c",
+              "bg": ""
+            }
           },
           "description": {
-            "colors": "#4a5568",
+            "colors": {
+              "color": "#1a202c",
+              "bg": ""
+            },
             "typo": {
               "fontWeight": 500,
               "fontSize": {

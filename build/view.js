@@ -871,6 +871,7 @@ const Style = ({
   const layoutSl = `${wrapperSl} .card-grid`;
   const cardVerticalSl = `${layoutSl} .card-vertical`;
   const IconWrapperSl = `${wrapperSl} .icon-wrapper`;
+  const IconlineSl = `${layoutSl} .icon-wrapper::after`;
   const IconSl = `${cardVerticalSl} .icon svg`;
   const TitleSl = `${wrapperSl} .card-title`;
   const DescriptionSl = `${wrapperSl} .card-description`;
@@ -913,6 +914,9 @@ const Style = ({
 		${IconWrapperSl}{
 		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(icon?.bg)}
 		}
+		${IconlineSl}{
+			${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(icon?.bg)}
+		}
 		${IconSl}{
 		  fill: ${icon?.color};
 	      width: ${icon?.size};
@@ -920,13 +924,12 @@ const Style = ({
 		}
 
 		${TitleSl}{
-		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(title?.bg)}
-		  color: ${title?.colors};
 		  text-align : ${title?.textAlign};
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(title?.colors)}
 		}
 		${DescriptionSl}{
-		 color: ${description?.colors};
-		 text-align: ${description?.textAlign}
+		 text-align: ${description?.textAlign};
+		 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getColorsCSS)(description?.colors)}
 		}
 
 

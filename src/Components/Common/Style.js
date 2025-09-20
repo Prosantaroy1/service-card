@@ -1,5 +1,5 @@
 import { deskBreakpoint, mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools/utils/data';
-import { getBackgroundCSS, getBorderCSS, getBoxCSS, getMultiShadowCSS, getTypoCSS, } from "../../../../bpl-tools/utils/getCSS"
+import { getBackgroundCSS, getBorderCSS, getBoxCSS, getColorsCSS, getMultiShadowCSS, getTypoCSS, } from "../../../../bpl-tools/utils/getCSS"
 
 const Style = ({ attributes, id }) => {
 
@@ -14,6 +14,7 @@ const Style = ({ attributes, id }) => {
 	const layoutSl = `${wrapperSl} .card-grid`;
 	const cardVerticalSl = `${layoutSl} .card-vertical`;
 	const IconWrapperSl = `${wrapperSl} .icon-wrapper`;
+	const IconlineSl = `${layoutSl} .icon-wrapper::after`
 	const IconSl = `${cardVerticalSl} .icon svg`;
 	const TitleSl = `${wrapperSl} .card-title`;
 	const DescriptionSl = `${wrapperSl} .card-description`;
@@ -56,6 +57,9 @@ const Style = ({ attributes, id }) => {
 		${IconWrapperSl}{
 		  ${getBackgroundCSS(icon?.bg)}
 		}
+		${IconlineSl}{
+			${getBackgroundCSS(icon?.bg)}
+		}
 		${IconSl}{
 		  fill: ${icon?.color};
 	      width: ${icon?.size};
@@ -63,13 +67,12 @@ const Style = ({ attributes, id }) => {
 		}
 
 		${TitleSl}{
-		  ${getBackgroundCSS(title?.bg)}
-		  color: ${title?.colors};
 		  text-align : ${title?.textAlign};
+		  ${getColorsCSS(title?.colors)}
 		}
 		${DescriptionSl}{
-		 color: ${description?.colors};
-		 text-align: ${description?.textAlign}
+		 text-align: ${description?.textAlign};
+		 ${getColorsCSS(description?.colors)}
 		}
 
 

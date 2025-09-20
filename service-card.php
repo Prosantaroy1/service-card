@@ -86,9 +86,8 @@ if (!class_exists('PREFIXPlugin')) {
 				'menu_icon' => 'dashicons-index-card', //icon
 				'supports' => array('title', 'editor', 'revisions'),
 				'template' => [['scd/service-card']],  //open templated
-				'template_lock' => 'all', //lock
-				'show_in_nav_menus' => true,
-				'show_in_admin_bar' => true,
+				// 'template_lock' => 'all', //lock
+
 
 			]);
 		}
