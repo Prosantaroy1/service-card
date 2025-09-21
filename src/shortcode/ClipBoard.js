@@ -1,4 +1,4 @@
-import { useState } from "react";
+const { useState } = wp.element;
 
 const ClipBoard = ({ shortcode }) => {
     const [hasCopied, setHasCopied] = useState(false);

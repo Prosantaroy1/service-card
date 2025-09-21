@@ -278,7 +278,7 @@ if (!class_exists('PREFIXPlugin')) {
 
 				<!-- Right side -->
 				<div class="dashboard-image">
-					<img src="https://i.ibb.co.com/nqNHxg8g/demoOne.png" alt="Dashboard Demo">
+					<img src="<?php echo esc_url( SCD_DIR_URL . 'src/assets/image/demoOne.png' ); ?>" alt="Demo Image">
 				</div>
 			</div>
 			<?php

@@ -11,8 +11,6 @@ const Style = ({ attributes, setAttributes, device }) => {
   const { SectionContainer, cardBody } = Styles;
   const { title, description, icon } = cardBody;
 
-  console.log('line', cardBody?.button?.show)
-
   return (
     <>
       <PanelBody className='bPlPanelBody' title={__('Grid Layout', 'service-card')} initialOpen={false}>
@@ -31,7 +29,7 @@ const Style = ({ attributes, setAttributes, device }) => {
           })}
         />
       </PanelBody>
-      <PanelBody className='bPlPanelBody' title={__('Container Styles', 'service-card')} initialOpen={false}>
+      <PanelBody className='bPlPanelBody' title={__('Card', 'service-card')} initialOpen={false}>
         <Background
           label="Container Background"
           value={SectionContainer?.bg}
@@ -63,7 +61,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         />
 
       </PanelBody>
-      <PanelBody className='bPlPanelBody' title={__('Icon Styles', 'service-card')} initialOpen={false}>
+      <PanelBody className='bPlPanelBody' title={__('Icon', 'service-card')} initialOpen={false}>
         <ToggleControl
           __nextHasNoMarginBottom={true}
           label="Icon Show & Hidden"
@@ -109,7 +107,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         }
       </PanelBody>
       {
-        theme === 'themeThree' && <PanelBody className='bPlPanelBody' title={__('Line Styles', 'service-card')} initialOpen={false}>
+        theme === 'themeThree' && <PanelBody className='bPlPanelBody' title={__('Line', 'service-card')} initialOpen={false}>
           <ToggleControl
             __nextHasNoMarginBottom={true}
             label="Line Show & Hidden"
@@ -132,7 +130,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         </PanelBody>
       }
-      <PanelBody className='bPlPanelBody' title={__('Title Styles', 'service-card')} initialOpen={false}>
+      <PanelBody className='bPlPanelBody' title={__('Title', 'service-card')} initialOpen={false}>
         <ToggleControl
           __nextHasNoMarginBottom={true}
           label="title Show & Hidden"
@@ -204,7 +202,7 @@ const Style = ({ attributes, setAttributes, device }) => {
           </>) : null
         }
       </PanelBody>
-      <PanelBody className='bPlPanelBody' title={__('Description Styles', 'service-card')} initialOpen={false}>
+      <PanelBody className='bPlPanelBody' title={__('Description', 'service-card')} initialOpen={false}>
         <ToggleControl
           __nextHasNoMarginBottom={true}
           label="description Show & Hidden"
@@ -268,7 +266,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         }
       </PanelBody>
       {
-        theme === 'themeThree' && <PanelBody className='bPlPanelBody' title={__('Button Styles', 'service-card')} initialOpen={false}>
+        theme === 'themeThree' && <PanelBody className='bPlPanelBody' title={__('Button', 'service-card')} initialOpen={false}>
           <ToggleControl
             __nextHasNoMarginBottom={true}
             label="button Show & Hidden"
