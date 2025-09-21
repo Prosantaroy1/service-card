@@ -34,6 +34,8 @@ if (!class_exists('PREFIXPlugin')) {
 			add_action('admin_menu', [$this, 'add_service_card_submenu']);
 			add_action('admin_init', [$this, 'sc_plugin_redirect_after_activation']);
 			register_activation_hook(__FILE__, [$this, 'sc_plugin_activate_redirect']);
+			//admin
+			add_action('admin_enqueue_scripts', [$this, 'adminEnqueueScripts']);
 		}
 
 		function onInit()
@@ -164,8 +166,8 @@ if (!class_exists('PREFIXPlugin')) {
 				wp_enqueue_style(
 					'shortcode-css',
 					SCD_DIR_URL . './build/shortcode.css',
-					[], 
-					SCD_VERSION 
+					[],
+					SCD_VERSION
 				);
 
 
@@ -182,7 +184,17 @@ if (!class_exists('PREFIXPlugin')) {
 				'service_card_Demo',
 				[$this, 'sc_service_card_Demo_page']
 			);
+			add_submenu_page(
+				'edit.php?post_type=service_card',
+				'Dashboard',
+				'Dashboard',
+				'manage_options',
+				'service_card_Dashboard',
+				[$this, 'sc_service_card_Dashboard_page'],
+				0
+			);
 		}
+		// Demo Menu
 		function sc_service_card_Demo_page()
 		{
 
@@ -278,12 +290,34 @@ if (!class_exists('PREFIXPlugin')) {
 
 				<!-- Right side -->
 				<div class="dashboard-image">
-					<img src="<?php echo esc_url( SCD_DIR_URL . 'src/assets/image/demoOne.png' ); ?>" alt="Demo Image">
+					<img src="https://i.ibb.co.com/nqNHxg8g/demoOne.png" alt="Demo Image">
 				</div>
 			</div>
 			<?php
 
 		}
+		// Dashboard Menu
+		function sc_service_card_Dashboard_page()
+		{
+			?>
+			<div id='vgbDashboard' data-info='<?php echo esc_attr(wp_json_encode([
+				'version' => SCD_VERSION,
+				// 'isPremium' => vgb_IsPremium(),
+				// 'hasPro' => VGB_HAS_PRO,
+			])); ?>'></div>
+			<?php
+		}
+		function adminEnqueueScripts($hook)
+		{
+
+			if ('service_card_page_service_card_Dashboard' === $hook) {
+				wp_enqueue_style('vgb-admin-style', SCD_DIR_URL . './build/admin-dashboard.css', false, SCD_VERSION);
+				wp_enqueue_script('vgb-admin-script', SCD_DIR_URL . './build/admin-dashboard.js', ['react', 'react-dom', 'wp-data', "wp-api", "wp-util", "wp-i18n", "lodash"], SCD_VERSION, true);
+				wp_set_script_translations('vgb-admin-dashboard', 'video-gallery', SCD_DIR_PATH . 'languages');
+
+			}
+		}
+		//activition plugins
 		function sc_plugin_activate_redirect()
 		{
 			add_option('sc_plugin_redirect_after_activation', true);

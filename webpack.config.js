@@ -13,6 +13,7 @@ module.exports = {
 	entry: {
 		...defaultConfig.entry(),
 		shortcode: "./src/shortcode/shortcode.js",
+		"admin-dashboard": "./src/admin/dashboard.js",
 	},
 	plugins: [
 		...plugins,
