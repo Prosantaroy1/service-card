@@ -4,11 +4,11 @@ import Header from "../../../../bpl-tools/Admin/Header/Header";
 
 const navigation = [
     { name: "Welcome", href: "/welcome" },
-    // { name: "Demos", href: "/demos" },
+    { name: "Demos", href: "/demos" },
     { name: "Filter Demos", href: "/filter-demos" },
     { name: "Pricing", href: "/pricing" },
     // { name: "Purchase", href: "/purchase" },
-    // { name: "Feature Comparison", href: "/feature-comparison" },
+    { name: "Feature Comparison", href: "/feature-comparison" },
 ];
 
 const Layout = (props) => {

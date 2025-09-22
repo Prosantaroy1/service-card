@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Constant
-define('SCD_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0');
+define('SCD_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.0.0');
 define('SCD_DIR_URL', plugin_dir_url(__FILE__));
 define('SCD_DIR_PATH', plugin_dir_path(__FILE__));
 

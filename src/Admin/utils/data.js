@@ -1,4 +1,4 @@
-const slug = "video-gallery-block";
+const slug = "service-card";
 
 export const dashboardInfo = (info) => {
     const { version, isPremium, hasPro } = info;
@@ -6,13 +6,13 @@ export const dashboardInfo = (info) => {
     const proSuffix = isPremium ? " Pro" : "";
 
     return {
-        name: `Video Gallery Block${proSuffix}`,
-        displayName: `Video Gallery Block${proSuffix} - Display Multiple Videos in Grid or Lightbox`,
+        name: `Service Card${proSuffix}`,
+        displayName: `Service Card${proSuffix} - Display Multiple Card in Grid or Lightbox`,
         description:
             "A lightweight Gutenberg block plugin for WordPress that lets you easily create responsive video galleries with albums, filters, captions, and lightbox support. Showcase YouTube, Vimeo, Wistia, or self-hosted videos in a modern grid layout directly in the block editor.",
         slug,
-        logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
-        banner: `https://ps.w.org/${slug}/assets/banner-772x250.png`,
+        logo: `https://i.ibb.co.com/nqNHxg8g/demoOne.png`,
+        banner: `https://i.ibb.co.com/nqNHxg8g/demoOne.png`,
         // video: "https://www.youtube.com/watch?v=milYZrqLJsE",
         isYoutube: true,
         version,
@@ -33,6 +33,10 @@ export const dashboardInfo = (info) => {
 };
 
 export const changelogs = [
+    {
+        version: "3.0.0 - 10 Sep 2025",
+        list: ["Added Six Video Gallery Layout", "Update SDK", "Admin Dashboard"],
+    },
     {
         version: "2.0.0 - 10 Sep 2025",
         list: ["Added Six Video Gallery Layout", "Update SDK", "Admin Dashboard"],
@@ -57,6 +61,14 @@ export const demoInfo = {
     allInOneLabel: "See All Demos",
     allInOneLink: "https://apb.bplugins.com/all-demos-in-one-place/",
     demos: [
+        {
+            icon: "",
+            title: "Service Card - Default",
+            description: "Default Card Design",
+            category: "",
+            type: "image",
+            url: "https://i.ibb.co.com/nqNHxg8g/demoOne.png",
+        },
         {
             icon: "",
             title: "Grid- Default layout",
@@ -236,8 +248,8 @@ export const pricingInfo = {
             name: "Single Site",
             quantity: 1,
             prices: {
-                monthly: "4.99",
-                annual: "29",
+                monthly: "10.99",
+                annual: "55",
                 lifetime: "149.99",
             },
             pricePrefix: "",
@@ -300,9 +312,10 @@ export const pricingInfo = {
 export const filterDemoInfo = {
     categories: [
         { label: "All", value: "all", col: 3, height: "300px" },
+        { label: "Card", value: "card", col: 3, height: "300px" },
         { label: "Hero", value: "hero", col: 3 },
-        { label: "Ticker", value: "ticker", col: 3 },
-        { label: "FAQ", value: "faq", col: 1, height: "400px" },
+        { label: "Ticker", value: "ticker", col: 4 },
+        { label: "FAQ", value: "faq", col: 2, height: "400px" },
         {
             label: "Call To Actions",
             value: "call-to-actions",
@@ -318,8 +331,13 @@ export const filterDemoInfo = {
 
     demos: [
         {
+            title: "Simple Card",
+            categories: ["card", "testimonial"],
+            url: "https://i.ibb.co.com/nqNHxg8g/demoOne.png",
+        },
+        {
             title: "Testimonial Hero",
-            categories: ["hero", "testimonial"],
+            categories: ["card", "testimonial"],
             url: "https://images.pexels.com/photos/32837692/pexels-photo-32837692.jpeg",
         },
         {
@@ -400,6 +418,10 @@ export const featureCompareInfo = {
         },
     ],
     features: [
+        {
+            label: "Service Multiple card Design",
+            plans: ["lhmjqhkeyi"],
+        },
         {
             label: "Multiple Layouts (Grid, Masonry, Ticker, and Slider)",
             plans: ["ztbk4ex2fyi", "lhmjqhkeyi"],

@@ -52,13 +52,13 @@ const App = (props) => {
                     />
 
                     {/* {!isPremium && (
-            <Route
-              path="pricing"
-              element={
-                <Pricing pricingInfo={pricingInfo} options={{}} {...props} />
-              }
-            />
-          )} */}
+                        <Route
+                            path="pricing"
+                            element={
+                                <Pricing pricingInfo={pricingInfo} options={{}} {...props} />
+                            }
+                        />
+                    )} */}
 
                     {!isPremium && (
                         <Route

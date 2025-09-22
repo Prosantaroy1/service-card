@@ -2405,18 +2405,21 @@ __webpack_require__.r(__webpack_exports__);
 const navigation = [{
   name: "Welcome",
   href: "/welcome"
-},
-// { name: "Demos", href: "/demos" },
-{
+}, {
+  name: "Demos",
+  href: "/demos"
+}, {
   name: "Filter Demos",
   href: "/filter-demos"
 }, {
   name: "Pricing",
   href: "/pricing"
-}
+},
 // { name: "Purchase", href: "/purchase" },
-// { name: "Feature Comparison", href: "/feature-comparison" },
-];
+{
+  name: "Feature Comparison",
+  href: "/feature-comparison"
+}];
 const Layout = props => {
   const {
     isPremium
@@ -2506,7 +2509,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   filterDemoInfo: () => (/* binding */ filterDemoInfo),
 /* harmony export */   pricingInfo: () => (/* binding */ pricingInfo)
 /* harmony export */ });
-const slug = "video-gallery-block";
+const slug = "service-card";
 const dashboardInfo = info => {
   const {
     version,
@@ -2515,12 +2518,12 @@ const dashboardInfo = info => {
   } = info;
   const proSuffix = isPremium ? " Pro" : "";
   return {
-    name: `Video Gallery Block${proSuffix}`,
-    displayName: `Video Gallery Block${proSuffix} - Display Multiple Videos in Grid or Lightbox`,
+    name: `Service Card${proSuffix}`,
+    displayName: `Service Card${proSuffix} - Display Multiple Card in Grid or Lightbox`,
     description: "A lightweight Gutenberg block plugin for WordPress that lets you easily create responsive video galleries with albums, filters, captions, and lightbox support. Showcase YouTube, Vimeo, Wistia, or self-hosted videos in a modern grid layout directly in the block editor.",
     slug,
-    logo: `https://ps.w.org/${slug}/assets/icon-128x128.png`,
-    banner: `https://ps.w.org/${slug}/assets/banner-772x250.png`,
+    logo: `https://i.ibb.co.com/nqNHxg8g/demoOne.png`,
+    banner: `https://i.ibb.co.com/nqNHxg8g/demoOne.png`,
     // video: "https://www.youtube.com/watch?v=milYZrqLJsE",
     isYoutube: true,
     version,
@@ -2540,6 +2543,9 @@ const dashboardInfo = info => {
   };
 };
 const changelogs = [{
+  version: "3.0.0 - 10 Sep 2025",
+  list: ["Added Six Video Gallery Layout", "Update SDK", "Admin Dashboard"]
+}, {
   version: "2.0.0 - 10 Sep 2025",
   list: ["Added Six Video Gallery Layout", "Update SDK", "Admin Dashboard"]
 }, {
@@ -2558,6 +2564,13 @@ const demoInfo = {
   allInOneLabel: "See All Demos",
   allInOneLink: "https://apb.bplugins.com/all-demos-in-one-place/",
   demos: [{
+    icon: "",
+    title: "Service Card - Default",
+    description: "Default Card Design",
+    category: "",
+    type: "image",
+    url: "https://i.ibb.co.com/nqNHxg8g/demoOne.png"
+  }, {
     icon: "",
     title: "Grid- Default layout",
     description: "",
@@ -2710,8 +2723,8 @@ const pricingInfo = {
     name: "Single Site",
     quantity: 1,
     prices: {
-      monthly: "4.99",
-      annual: "29",
+      monthly: "10.99",
+      annual: "55",
       lifetime: "149.99"
     },
     pricePrefix: "",
@@ -2759,17 +2772,22 @@ const filterDemoInfo = {
     col: 3,
     height: "300px"
   }, {
+    label: "Card",
+    value: "card",
+    col: 3,
+    height: "300px"
+  }, {
     label: "Hero",
     value: "hero",
     col: 3
   }, {
     label: "Ticker",
     value: "ticker",
-    col: 3
+    col: 4
   }, {
     label: "FAQ",
     value: "faq",
-    col: 1,
+    col: 2,
     height: "400px"
   }, {
     label: "Call To Actions",
@@ -2800,8 +2818,12 @@ const filterDemoInfo = {
     col: 1
   }],
   demos: [{
+    title: "Simple Card",
+    categories: ["card", "testimonial"],
+    url: "https://i.ibb.co.com/nqNHxg8g/demoOne.png"
+  }, {
     title: "Testimonial Hero",
-    categories: ["hero", "testimonial"],
+    categories: ["card", "testimonial"],
     url: "https://images.pexels.com/photos/32837692/pexels-photo-32837692.jpeg"
   }, {
     title: "luxurious fanion furniture store website",
@@ -2865,6 +2887,9 @@ const featureCompareInfo = {
     color: "#146EF5"
   }],
   features: [{
+    label: "Service Multiple card Design",
+    plans: ["lhmjqhkeyi"]
+  }, {
     label: "Multiple Layouts (Grid, Masonry, Ticker, and Slider)",
     plans: ["ztbk4ex2fyi", "lhmjqhkeyi"]
   }, {
