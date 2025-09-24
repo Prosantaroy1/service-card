@@ -23,6 +23,7 @@ import {
 import Welcome from "./Welcome";
 
 const App = (props) => {
+
     const { name, isPremium, freemius } = props;
 
     return (

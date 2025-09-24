@@ -2201,5 +2201,165 @@ svg.bPlBlockIcon {
   height: 14px;
   font-size: 14px;
 }
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../bpl-tools/ProControls/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../bpl-tools/ProControls/AboutProModal/AboutProModal.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+.bplAboutProModal h3 {
+  margin: 0 0 15px 0;
+}
+.bplAboutProModal .text {
+  font-size: 15px;
+  margin: 25px 0 0 0;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../bpl-tools/ProControls/BControlPro/BControlPro.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.bplProIdentifier .labelPro {
+  padding: 0px 5px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #146EF5;
+}
+.bplProIdentifier .components-input-control__container {
+  opacity: 0.75;
+}
+.bplProIdentifier .bplOpacity75 {
+  opacity: 0.75;
+}
+.bplProIdentifier .components-form-toggle {
+  opacity: 0.75;
+}
+
+.bplOpacity50 {
+  opacity: 0.5;
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../bpl-tools/ProControls/BtnGroupPro/BtnGroupPro.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.bplProGroupBtn {
+  position: relative;
+}
+.bplProGroupBtn::before {
+  content: "Pro";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background: #146EF5;
+  padding: 2px 8px;
+  border-radius: 50px;
+  z-index: 10;
+  display: none;
+}
+.bplProGroupBtn:hover::before {
+  display: block;
+}
+.bplProGroupBtn svg {
+  opacity: 0.75;
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../bpl-tools/ProControls/FrontShortCode/FrontShortCode.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.bPlFrontShortCode {
+  text-align: center;
+  padding: 0 0 10px 0;
+}
+.bPlFrontShortCode label {
+  display: inline-block;
+  box-sizing: border-box;
+}
+.bPlFrontShortCode .bPlFrontShortCodeInput {
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.bPlFrontShortCode .bPlFrontShortCodeInput input {
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  outline: none;
+  background-color: #146EF5;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+.bPlFrontShortCode .bPlFrontShortCodeInput .tooltip {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.bPlFrontShortCode .bPlFrontShortCodeInput .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.bPlFrontShortCode .bPlFrontShortCodeInput:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+/*!************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../bpl-tools/ProControls/RadioControlPro/RadioControlPro.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************/
+.radioControlRadioControlPro {
+  width: 100%;
+}
+.radioControlRadioControlPro .bplProIdentifier {
+  opacity: 0.75;
+}
+.radioControlRadioControlPro .bplProIdentifier .components-input-control__container {
+  opacity: 0.75;
+}
+.radioControlRadioControlPro .bplProIdentifier .components-form-toggle {
+  opacity: 0.75;
+}
+.radioControlRadioControlPro .bPlLabel {
+  width: 100%;
+}
+.radioControlRadioControlPro .radioControllabelContainer {
+  display: flex;
+  gap: 5px;
+}
+.radioControlRadioControlPro .radioControllabelPro {
+  padding: 0px 5px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #146EF5;
+}
+.radioControlRadioControlPro .radioControlbplOpacity75 {
+  opacity: 0.75;
+  white-space: nowrap;
+}
+.radioControlRadioControlPro .radioControlbplOpacity50 {
+  opacity: 0.5;
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../bpl-tools/ProControls/SelectControlPro/SelectControlPro.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+.bplPorSelect .proOption {
+  color: #fff;
+  background-color: #146EF5;
+}
 
 /*# sourceMappingURL=index.css.map*/

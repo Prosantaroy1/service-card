@@ -4,12 +4,15 @@ import { Background, BButtonGroup, BoxControl, ColorControl, ColorsControl, Devi
 import { HeightControl } from '@wordpress/block-editor'
 import { updateData } from '../../../../utils/functions';
 import { BorderControl } from '../../../../../../bpl-tools/Components/Deprecated';
+import { BControlPro } from '../../../../../../bpl-tools/ProControls';
 
-const Style = ({ attributes, setAttributes, device }) => {
+const Style = ({ attributes, setAttributes, device, isPremium, setIsProModalOpen }) => {
 
   const { Styles = {}, column = {}, theme } = attributes || {};
   const { SectionContainer, cardBody } = Styles;
   const { title, description, icon } = cardBody;
+
+  const premiumProps = { isPremium, setIsProModalOpen };
 
   return (
     <>
@@ -21,12 +24,15 @@ const Style = ({ attributes, setAttributes, device }) => {
           value={column[device]}
           onChange={v => setAttributes({ column: updateData(column, v, device) })}
         />
-        <UnitControl
+
+        <BControlPro
           label={__("GridLayout Gap")}
           value={column?.gap}
           onChange={(v) => setAttributes({
             column: updateData(column, v, 'gap')
           })}
+          Component={UnitControl}
+          {...premiumProps}
         />
       </PanelBody>
       <PanelBody className='bPlPanelBody' title={__('Card', 'service-card')} initialOpen={false}>

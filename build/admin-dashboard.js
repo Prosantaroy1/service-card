@@ -2566,137 +2566,34 @@ const demoInfo = {
   demos: [{
     icon: "",
     title: "Service Card - Default",
-    description: "Default Card Design",
+    description: "",
     category: "",
     type: "image",
     url: "https://i.ibb.co.com/nqNHxg8g/demoOne.png"
   }, {
     icon: "",
-    title: "Grid- Default layout",
+    title: "Service Card - ThemeTwo",
     description: "",
     category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/grid-default-layout/"
+    type: "image",
+    url: "https://i.ibb.co.com/k24Ms964/themetwo.png"
   }, {
     icon: "",
-    title: "Grid- Title Meta layout",
+    title: "Service Card - ThemeThree",
     description: "",
     category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/grid-title-meta-layout/"
-  }, {
-    icon: "",
-    title: "Grid- Side Image layout",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/grid-side-image-layout/"
-  }, {
-    icon: "",
-    title: "Grid- Overlay layout",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/grid-overlay-layout/"
-  }, {
-    icon: "",
-    title: "Masonry- Default layout",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/masonry-default-layout/"
-  }, {
-    icon: "",
-    title: "Masonry- Title Meta layout",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/masonry-title-meta-layout/"
-  }, {
-    icon: "",
-    title: "Masonry- Side Image layout",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/masonry-side-image-layout/"
-  }, {
-    icon: "",
-    title: "Masonry- Overlay layout",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/masonry-overlay-layout/"
-  }, {
-    icon: "",
-    title: "Slider- Side Image layout",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/slider-side-image-layout/"
-  }, {
-    icon: "",
-    title: "Slider- Overlay layout",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/slider-overlay-layout/"
-  }, {
-    icon: "",
-    title: "Ticker- Side Image layout",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/ticker-side-image-layout/"
-  }, {
-    icon: "",
-    title: "Ticker- Overlay layout",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/ticker-overlay-layout/"
-  }, {
-    icon: "",
-    title: "All Posts",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/all-posts/"
-  }, {
-    icon: "",
-    title: "Post Section (Design 1)",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/design-1/"
-  }, {
-    icon: "",
-    title: "Post Section (Design 2)",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/post-section-design-2/"
-  }, {
-    icon: "",
-    title: "Post Section (Design 3)",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/post-section-design-3/"
-  }, {
-    icon: "",
-    title: "Post Section (Design 4)",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/post-section-design-4/"
-  }, {
-    icon: "",
-    title: "Post Section (Design 5)",
-    description: "",
-    category: "",
-    type: "iframe",
-    url: "https://apb.bplugins.com/demo/post-section-design-5/"
-  }]
+    type: "image",
+    url: "https://i.ibb.co.com/RpVYpGCf/demothree.png"
+  }
+  // {
+  //     icon: "",
+  //     title: "Grid- Default layout",
+  //     description: "",
+  //     category: "",
+  //     type: "iframe",
+  //     url: "https://apb.bplugins.com/demo/grid-default-layout/",
+  // },
+  ]
 };
 const pricingInfo = {
   cycles: [{
@@ -2756,7 +2653,7 @@ const pricingInfo = {
     isFeatured: false,
     note: ""
   }],
-  features: ["Add videos from YouTube, Vimeo, Wistia, or files", "Use custom poster images for previews", "Add titles, subtitles, and captions", "Show star ratings for reviews", "Group videos into albums", "Choose from multiple gallery styles", "Use sliders, carousels, lightboxes, and more", "Adjust columns, rows, and spacing", "Add optional headers and subheaders", "Customize video size and play button", "Style navigation arrows, dots, and thumbnails", "Optimize galleries for desktop, tablet, and mobile", "Edit with a visual WordPress editor"],
+  features: ["Add Service Card Easy Design", "Add videos from YouTube, Vimeo, Wistia, or files", "Use custom poster images for previews", "Add titles, subtitles, and captions", "Show star ratings for reviews", "Group videos into albums", "Choose from multiple gallery styles", "Use sliders, carousels, lightboxes, and more", "Adjust columns, rows, and spacing", "Add optional headers and subheaders", "Customize video size and play button", "Style navigation arrows, dots, and thumbnails", "Optimize galleries for desktop, tablet, and mobile", "Edit with a visual WordPress editor"],
   button: {
     label: "Buy Now ➜"
   },
@@ -2790,11 +2687,6 @@ const filterDemoInfo = {
     col: 2,
     height: "400px"
   }, {
-    label: "Call To Actions",
-    value: "call-to-actions",
-    col: 2,
-    height: "350px"
-  }, {
     label: "Testimonial",
     value: "testimonial",
     col: 3
@@ -2821,6 +2713,14 @@ const filterDemoInfo = {
     title: "Simple Card",
     categories: ["card", "testimonial"],
     url: "https://i.ibb.co.com/nqNHxg8g/demoOne.png"
+  }, {
+    title: "Simple Card Two",
+    categories: ["card", "testimonial"],
+    url: "https://i.ibb.co.com/k24Ms964/themetwo.png"
+  }, {
+    title: "Simple Card Three",
+    categories: ["card", "testimonial"],
+    url: "https://i.ibb.co.com/RpVYpGCf/demothree.png"
   }, {
     title: "Testimonial Hero",
     categories: ["card", "testimonial"],
@@ -2888,7 +2788,7 @@ const featureCompareInfo = {
   }],
   features: [{
     label: "Service Multiple card Design",
-    plans: ["lhmjqhkeyi"]
+    plans: ["lhmjqhkeyi", "ztbk4ex2fyi"]
   }, {
     label: "Multiple Layouts (Grid, Masonry, Ticker, and Slider)",
     plans: ["ztbk4ex2fyi", "lhmjqhkeyi"]
@@ -13463,6 +13363,7 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', () => {
   const dashboardEl = document.getElementById("vgbDashboard");
   const info = JSON.parse(dashboardEl.dataset.info);
+  console.log(info);
   (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(dashboardEl).render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Component_App__WEBPACK_IMPORTED_MODULE_4__["default"], {
     ...(0,_utils_data__WEBPACK_IMPORTED_MODULE_3__.dashboardInfo)(info)
   }));

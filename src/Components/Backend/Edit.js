@@ -4,14 +4,18 @@ import Style from "../Common/Style";
 import { withSelect } from "@wordpress/data";
 import ThemeSwitch from '../Theme/ThemeSwitch/ThemeSwitch';
 import ClipBoard from '../../shortcode/ClipBoard';
-
+import { usePremiumInEditor } from '../../../../bpl-tools/hooks';
 
 const Edit = (props) => {
   const { attributes, setAttributes, clientId, device, postId, postType } = props;
 
+  const { isPremium, isLoading } = usePremiumInEditor("scbUtils", "scbPremiumChecker");
+
+
+
   return (
     <>
-      <Settings {...{ attributes, setAttributes }} clientId={clientId} device={device} />
+      <Settings {...{ attributes, setAttributes }} clientId={clientId} device={device} isPremium={isPremium} />
 
       <div {...useBlockProps()}>
         <Style attributes={attributes} id={`block-${clientId}`} device={device} />

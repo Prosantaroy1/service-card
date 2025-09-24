@@ -9,6 +9,8 @@ const General = ({ attributes, setAttributes }) => {
 
   const { theme, activeIndex } = attributes;
 
+
+
   return (
     <>
       <PanelBody
@@ -20,7 +22,12 @@ const General = ({ attributes, setAttributes }) => {
           labelPosition="left"
           value={theme}
           options={themeOption}
-          onChange={(v) => setAttributes(themeSwitch(v, attributes))}
+          // onChange={(v) => setAttributes(themeSwitch(v, attributes))}
+          onChange={(v) => {
+            const newAttrs = themeSwitch(v, attributes);
+            setAttributes(newAttrs);
+          }}
+
           __next40pxDefaultSize={true}
         />
 

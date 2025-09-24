@@ -14,7 +14,7 @@ const Welcome = (props) => {
                     <FSCheckoutButton
                         {...{
                             freemius,
-                            options: { title: name },
+                            options: { title: name, },
                             buttonProps: { variant: "secondary" },
                         }}
                     >
