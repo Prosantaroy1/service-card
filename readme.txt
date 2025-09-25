@@ -94,13 +94,13 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial Release
-
-== Upgrade Notice ==
+= 1.0.1 =
+* payment coupon
 
 = 1.0.0 =
 * Initial Release
+
+
 
 == External Service Integration ==
 

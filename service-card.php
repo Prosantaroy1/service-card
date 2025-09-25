@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Service Card 
  * Description: Short description of the plugin Service Card 
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -27,7 +27,7 @@ if (function_exists('sc_fs')) {
 	});
 } else {
 	// Constant
-	define('SCD_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0');
+	define('SCD_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.1');
 	define('SCD_DIR_URL', plugin_dir_url(__FILE__));
 	define('SCD_DIR_PATH', plugin_dir_path(__FILE__));
 	//==define==
@@ -54,19 +54,16 @@ if (function_exists('sc_fs')) {
 					'type' => 'plugin',
 					'public_key' => 'pk_845c19fabdc20ef5233116f937b0e',
 					'is_premium' => true,
-					'premium_suffix' => 'Pro',
+					'premium_suffix' => 'pro',
 					'has_premium_version' => true,
 					'has_addons' => false,
 					'has_paid_plans' => true,
+
 					'wp_org_gatekeeper' => 'OA7#BoRiBNqdf52FvzEf!!074aRLPs8fspif$7K1#4u4Csys1fQlCecVcUTOs2mcpeVHi#C2j9d09fOTvbC0HloPT7fFee5WdS3G',
-					'trial' => array(
-						'days' => 3,
-						'is_require_payment' => false,
-					),
 					'menu' => array(
 						'slug' => 'edit.php?post_type=Service_card',
 						'first-path' => 'edit.php?post_type=service_card&page=service_card_Dashboard',
-					),
+					)
 				);
 
 
