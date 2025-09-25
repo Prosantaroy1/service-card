@@ -9,7 +9,7 @@ import { usePremiumInEditor } from '../../../../bpl-tools/hooks';
 const Edit = (props) => {
   const { attributes, setAttributes, clientId, device, postId, postType } = props;
 
-  const { isPremium, isLoading } = usePremiumInEditor("scbUtils", "scbPremiumChecker");
+  const { isPremium } = usePremiumInEditor("scbUtils", "scbPremiumChecker");
 
 
 

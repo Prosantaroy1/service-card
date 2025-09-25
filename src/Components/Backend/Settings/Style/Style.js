@@ -44,12 +44,20 @@ const Style = ({ attributes, setAttributes, device, isPremium, setIsProModalOpen
           })}
         />
         <PanelRow><Label className=''>Padding</Label> <Device /> </PanelRow>
-        <BoxControl
+        {/* <BoxControl
 
           values={SectionContainer?.padding?.[device]}
           onChange={(v) => setAttributes({
             Styles: updateData(Styles, v, 'SectionContainer', 'padding', device)
           })}
+        /> */}
+        <BControlPro
+          values={SectionContainer?.padding?.[device]}
+          onChange={(v) => setAttributes({
+            Styles: updateData(Styles, v, 'SectionContainer', 'padding', device)
+          })}
+          Component={BoxControl}
+          {...premiumProps}
         />
         <BorderControl
           label='Border'

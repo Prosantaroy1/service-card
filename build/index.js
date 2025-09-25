@@ -47095,8 +47095,7 @@ const Edit = props => {
     postType
   } = props;
   const {
-    isPremium,
-    isLoading
+    isPremium
   } = (0,_bpl_tools_hooks__WEBPACK_IMPORTED_MODULE_7__.usePremiumInEditor)("scbUtils", "scbPremiumChecker");
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Settings_Settings__WEBPACK_IMPORTED_MODULE_2__["default"], {
     attributes,
@@ -47449,11 +47448,13 @@ const Style = ({
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Label, {
     className: ""
-  }, "Padding"), " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Device, null), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.BoxControl, {
+  }, "Padding"), " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Device, null), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_ProControls__WEBPACK_IMPORTED_MODULE_7__.BControlPro, {
     values: SectionContainer?.padding?.[device],
     onChange: v => setAttributes({
       Styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_5__.updateData)(Styles, v, 'SectionContainer', 'padding', device)
-    })
+    }),
+    Component: _bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.BoxControl,
+    ...premiumProps
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components_Deprecated__WEBPACK_IMPORTED_MODULE_6__.BorderControl, {
     label: "Border",
     value: SectionContainer?.border,

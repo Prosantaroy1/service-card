@@ -27,7 +27,7 @@ if (function_exists('sc_fs')) {
 	});
 } else {
 	// Constant
-	define('SCD_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.0.0');
+	define('SCD_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0');
 	define('SCD_DIR_URL', plugin_dir_url(__FILE__));
 	define('SCD_DIR_PATH', plugin_dir_path(__FILE__));
 	//==define==
@@ -45,15 +45,14 @@ if (function_exists('sc_fs')) {
 				if (SCD_HAS_PRO) {
 					require_once dirname(__FILE__) . '/freemius/start.php';
 				} else {
-					require_once dirname(__FILE__) . '/freemius-lite/start.php';
+					require_once dirname(__FILE__) . '/freemius-lite/freemius-lite/start.php';
 				}
 
 				$scdConfig = array(
-					'id' => '20850',
-					'slug' => 'services-card',
-					'premium_slug' => 'services-card-pro',
+					'id' => '20854',
+					'slug' => 'service-card',
 					'type' => 'plugin',
-					'public_key' => 'pk_5281f27702c9ad825bd76b8effa9e',
+					'public_key' => 'pk_845c19fabdc20ef5233116f937b0e',
 					'is_premium' => true,
 					'premium_suffix' => 'Pro',
 					'has_premium_version' => true,
@@ -65,8 +64,8 @@ if (function_exists('sc_fs')) {
 						'is_require_payment' => false,
 					),
 					'menu' => array(
-						'slug' => 'edit.php?post_type=services_card',
-						'first-path' => 'edit.php?post_type=services_card&page=demo_page',
+						'slug' => 'edit.php?post_type=Service_card',
+						'first-path' => 'edit.php?post_type=service_card&page=service_card_Dashboard',
 					),
 				);
 
@@ -81,7 +80,8 @@ if (function_exists('sc_fs')) {
 		do_action('sc_fs_loaded');
 	}
 
-	function scbIsPremium(){
+	function scbIsPremium()
+	{
 		return SCD_HAS_PRO ? sc_fs()->can_use_premium_code() : false;
 	}
 
@@ -98,10 +98,38 @@ if (function_exists('sc_fs')) {
 				add_action('manage_service_card_posts_custom_column', [$this, 'sc_manageCustomColumn'], 10, 2);
 				add_action('admin_enqueue_scripts', [$this, 'sc_admin_enqueue_script']);
 				add_action('admin_menu', [$this, 'add_service_card_submenu']);
-				add_action('admin_init', [$this, 'sc_plugin_redirect_after_activation']);
-				register_activation_hook(__FILE__, [$this, 'sc_plugin_activate_redirect']);
-				//admin
 				add_action('admin_enqueue_scripts', [$this, 'adminEnqueueScripts']);
+				// for premium only
+				add_action('wp_ajax_scbPremiumChecker', [$this, 'scbPremiumChecker']);
+				add_action('wp_ajax_nopriv_scbPremiumChecker', [$this, 'scbPremiumChecker']);
+				add_action('admin_init', [$this, 'registerSettings']);
+				add_action('rest_api_init', [$this, 'registerSettings']);
+			}
+
+			function scbPremiumChecker()
+			{
+				$nonce = sanitize_text_field($_POST['_wpnonce'] ?? null);
+
+				if (!wp_verify_nonce($nonce, 'wp_ajax')) {
+					wp_send_json_error('Invalid Request');
+				}
+
+				wp_send_json_success([
+					'isPipe' => scbIsPremium()
+				]);
+			}
+
+			function registerSettings()
+			{
+				register_setting('scbUtils', 'scbUtils', [
+					'show_in_rest' => [
+						'name' => 'scbUtils',
+						'schema' => ['type' => 'string']
+					],
+					'type' => 'string',
+					'default' => wp_json_encode(['nonce' => wp_create_nonce('wp_ajax')]),
+					'sanitize_callback' => 'sanitize_text_field'
+				]);
 			}
 
 			function onInit()
@@ -272,23 +300,6 @@ if (function_exists('sc_fs')) {
 					wp_enqueue_script('vgb-admin-script', SCD_DIR_URL . './build/admin-dashboard.js', ['react', 'react-dom', 'wp-data', "wp-api", "wp-util", "wp-i18n", "lodash"], SCD_VERSION, true);
 					wp_set_script_translations('vgb-admin-dashboard', 'video-gallery', SCD_DIR_PATH . 'languages');
 
-				}
-			}
-			//activition plugins
-			function sc_plugin_activate_redirect()
-			{
-				add_option('sc_plugin_redirect_after_activation', true);
-			}
-
-			function sc_plugin_redirect_after_activation()
-			{
-				if (get_option('sc_plugin_redirect_after_activation')) {
-
-					delete_option('sc_plugin_redirect_after_activation');
-
-					$redirect_url = admin_url('edit.php?post_type=service_card&page=service_card_Dashboard#/welcome');
-					wp_safe_redirect($redirect_url);
-					exit;
 				}
 			}
 

@@ -2536,9 +2536,9 @@ const dashboardInfo = info => {
       pricing: `https://bplugins.com/products/${slug}/pricing`
     },
     freemius: {
-      product_id: 20637,
-      plan_id: 34353,
-      public_key: "pk_02d017aab6844d54db3238a59e91c"
+      product_id: 20854,
+      plan_id: 34740,
+      public_key: "pk_845c19fabdc20ef5233116f937b0e"
     }
   };
 };
@@ -13363,7 +13363,6 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', () => {
   const dashboardEl = document.getElementById("vgbDashboard");
   const info = JSON.parse(dashboardEl.dataset.info);
-  console.log(info);
   (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(dashboardEl).render((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_Component_App__WEBPACK_IMPORTED_MODULE_4__["default"], {
     ...(0,_utils_data__WEBPACK_IMPORTED_MODULE_3__.dashboardInfo)(info)
   }));
