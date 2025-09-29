@@ -36049,7 +36049,7 @@ const BplBlockPreview = ({
     key: idx
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     className: `bPl-previewBtn ${value === block.value ? 'bPl-activeBtn' : ''}`,
-    onClick: () => handleButtonClick(block.value, idx, block.content),
+    onClick: () => handleButtonClick(idx, block.content),
     onMouseEnter: () => handleMouseInteraction(idx, true),
     onMouseLeave: () => handleMouseInteraction(idx, false)
   }, block.label)), activeIndex === idx && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Popover, {
@@ -47215,6 +47215,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_options__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../utils/options */ "./src/utils/options.js");
 /* harmony import */ var _bpl_tools_Components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../bpl-tools/Components */ "../bpl-tools/Components/index.js");
 /* harmony import */ var _ServiceItemPanel_ServiceItemPanel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../ServiceItemPanel/ServiceItemPanel */ "./src/Components/Backend/ServiceItemPanel/ServiceItemPanel.js");
+/* harmony import */ var _bpl_tools_ProControls__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../bpl-tools/ProControls */ "../bpl-tools/ProControls/index.js");
+
 
 
 
@@ -47224,27 +47226,32 @@ __webpack_require__.r(__webpack_exports__);
 
 const General = ({
   attributes,
-  setAttributes
+  setAttributes,
+  isPremium,
+  setIsProModalOpen
 }) => {
   const {
     theme,
     activeIndex
   } = attributes;
+  const premiumProps = {
+    isPremium,
+    setIsProModalOpen
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Theme Switch", "service-card"),
     initialOpen: true
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_ProControls__WEBPACK_IMPORTED_MODULE_7__.BControlPro, {
     labelPosition: "left",
     value: theme,
-    options: _utils_options__WEBPACK_IMPORTED_MODULE_4__.themeOption
-    // onChange={(v) => setAttributes(themeSwitch(v, attributes))}
-    ,
+    options: _utils_options__WEBPACK_IMPORTED_MODULE_4__.themeOption,
     onChange: v => {
       const newAttrs = (0,_utils_functions__WEBPACK_IMPORTED_MODULE_3__.themeSwitch)(v, attributes);
       setAttributes(newAttrs);
     },
-    __next40pxDefaultSize: true
+    Component: _wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl,
+    ...premiumProps
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Service Card Content", "service-card"),
@@ -47446,9 +47453,10 @@ const Style = ({
     onChange: v => setAttributes({
       Styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_5__.updateData)(Styles, v, 'SectionContainer', 'bg')
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Label, {
+  }), isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Label, {
     className: ""
   }, "Padding"), " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Device, null), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_ProControls__WEBPACK_IMPORTED_MODULE_7__.BControlPro, {
+    label: isPremium ? '' : 'Padding',
     values: SectionContainer?.padding?.[device],
     onChange: v => setAttributes({
       Styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_5__.updateData)(Styles, v, 'SectionContainer', 'padding', device)
@@ -47471,13 +47479,15 @@ const Style = ({
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Icon', 'service-card'),
     initialOpen: false
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_ProControls__WEBPACK_IMPORTED_MODULE_7__.BControlPro, {
     __nextHasNoMarginBottom: true,
     label: "Icon Show & Hidden",
     checked: icon?.show,
     onChange: v => setAttributes({
       Styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_5__.updateData)(Styles, v, 'cardBody', 'icon', 'show')
-    })
+    }),
+    Component: _wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl,
+    ...premiumProps
   }), theme === 'default' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
     __nextHasNoMarginBottom: true,
     label: "Bottom Icon Show & Hidden",
@@ -47524,13 +47534,15 @@ const Style = ({
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title', 'service-card'),
     initialOpen: false
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_ProControls__WEBPACK_IMPORTED_MODULE_7__.BControlPro, {
     __nextHasNoMarginBottom: true,
     label: "title Show & Hidden",
     checked: title?.show,
     onChange: v => setAttributes({
       Styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_5__.updateData)(Styles, v, 'cardBody', 'title', 'show')
-    })
+    }),
+    Component: _wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl,
+    ...premiumProps
   }), title?.show === false ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Typography, {
     label: "Title Typography",
     value: title?.typo,
@@ -47582,13 +47594,15 @@ const Style = ({
     className: "bPlPanelBody",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Description', 'service-card'),
     initialOpen: false
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_ProControls__WEBPACK_IMPORTED_MODULE_7__.BControlPro, {
     __nextHasNoMarginBottom: true,
     label: "description Show & Hidden",
     checked: description?.show,
     onChange: v => setAttributes({
       Styles: (0,_utils_functions__WEBPACK_IMPORTED_MODULE_5__.updateData)(Styles, v, 'cardBody', 'description', 'show')
-    })
+    }),
+    Component: _wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl,
+    ...premiumProps
   }), description?.show === false ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Components__WEBPACK_IMPORTED_MODULE_3__.Typography, {
     label: "description Typography",
     value: description?.typo,

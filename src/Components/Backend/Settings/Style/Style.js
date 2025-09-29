@@ -43,15 +43,11 @@ const Style = ({ attributes, setAttributes, device, isPremium, setIsProModalOpen
             Styles: updateData(Styles, v, 'SectionContainer', 'bg')
           })}
         />
-        <PanelRow><Label className=''>Padding</Label> <Device /> </PanelRow>
-        {/* <BoxControl
-
-          values={SectionContainer?.padding?.[device]}
-          onChange={(v) => setAttributes({
-            Styles: updateData(Styles, v, 'SectionContainer', 'padding', device)
-          })}
-        /> */}
+        {
+          isPremium && <PanelRow><Label className=''>Padding</Label> <Device /> </PanelRow>
+        }
         <BControlPro
+          label={isPremium ? '' : 'Padding'}
           values={SectionContainer?.padding?.[device]}
           onChange={(v) => setAttributes({
             Styles: updateData(Styles, v, 'SectionContainer', 'padding', device)
@@ -76,13 +72,15 @@ const Style = ({ attributes, setAttributes, device, isPremium, setIsProModalOpen
 
       </PanelBody>
       <PanelBody className='bPlPanelBody' title={__('Icon', 'service-card')} initialOpen={false}>
-        <ToggleControl
+        <BControlPro
           __nextHasNoMarginBottom={true}
-          label="Icon Show & Hidden"
+          label='Icon Show & Hidden'
           checked={icon?.show}
           onChange={(v) => setAttributes({
             Styles: updateData(Styles, v, 'cardBody', 'icon', 'show')
           })}
+          Component={ToggleControl}
+          {...premiumProps}
         />
         {
           theme === 'default' && <ToggleControl
@@ -145,13 +143,15 @@ const Style = ({ attributes, setAttributes, device, isPremium, setIsProModalOpen
         </PanelBody>
       }
       <PanelBody className='bPlPanelBody' title={__('Title', 'service-card')} initialOpen={false}>
-        <ToggleControl
+        <BControlPro
           __nextHasNoMarginBottom={true}
-          label="title Show & Hidden"
+          label='title Show & Hidden'
           checked={title?.show}
           onChange={(v) => setAttributes({
             Styles: updateData(Styles, v, 'cardBody', 'title', 'show')
           })}
+          Component={ToggleControl}
+          {...premiumProps}
         />
         {
           title?.show === false ? (<>
@@ -217,13 +217,15 @@ const Style = ({ attributes, setAttributes, device, isPremium, setIsProModalOpen
         }
       </PanelBody>
       <PanelBody className='bPlPanelBody' title={__('Description', 'service-card')} initialOpen={false}>
-        <ToggleControl
+        <BControlPro
           __nextHasNoMarginBottom={true}
-          label="description Show & Hidden"
+          label='description Show & Hidden'
           checked={description?.show}
           onChange={(v) => setAttributes({
             Styles: updateData(Styles, v, 'cardBody', 'description', 'show')
           })}
+          Component={ToggleControl}
+          {...premiumProps}
         />
         {
           description?.show === false ? (<>

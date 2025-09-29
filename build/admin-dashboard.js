@@ -2461,31 +2461,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _bpl_tools_Admin_Overview_Overview__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/Overview/Overview */ "../bpl-tools/Admin/Overview/Overview.js");
 /* harmony import */ var _bpl_tools_Admin_Changelog_Changelog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/Changelog/Changelog */ "../bpl-tools/Admin/Changelog/Changelog.js");
-/* harmony import */ var _bpl_tools_Admin_FSCheckoutButton_FSCheckoutButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../bpl-tools/Admin/FSCheckoutButton/FSCheckoutButton */ "../bpl-tools/Admin/FSCheckoutButton/FSCheckoutButton.js");
-/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/data */ "./src/admin/utils/data.js");
+/* harmony import */ var _utils_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/data */ "./src/admin/utils/data.js");
 
 
 
+//import FSCheckoutButton from "../../../../bpl-tools/Admin/FSCheckoutButton/FSCheckoutButton";
 
 
 const Welcome = props => {
   const {
-    name,
-    isPremium,
-    freemius
+    isPremium
   } = props;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Overview_Overview__WEBPACK_IMPORTED_MODULE_1__["default"], {
     ...props
-  }, !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_FSCheckoutButton_FSCheckoutButton__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    freemius,
-    options: {
-      title: name
-    },
-    buttonProps: {
-      variant: "secondary"
+  }, !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    type: "button",
+    className: "bPlButton variant-secondary",
+    onClick: e => {
+      e.preventDefault();
+      window.location.hash = '#/pricing';
     }
   }, "Buy Now")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bpl_tools_Admin_Changelog_Changelog__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    changelogs: _utils_data__WEBPACK_IMPORTED_MODULE_4__.changelogs,
+    changelogs: _utils_data__WEBPACK_IMPORTED_MODULE_3__.changelogs,
     ...props
   }));
 };
@@ -2523,8 +2520,8 @@ const dashboardInfo = info => {
     description: "A lightweight Gutenberg block plugin for WordPress that lets you easily create responsive video galleries with albums, filters, captions, and lightbox support. Showcase YouTube, Vimeo, Wistia, or self-hosted videos in a modern grid layout directly in the block editor.",
     slug,
     logo: `https://i.ibb.co.com/nqNHxg8g/demoOne.png`,
-    banner: `https://i.ibb.co.com/nqNHxg8g/demoOne.png`,
-    // video: "https://www.youtube.com/watch?v=milYZrqLJsE",
+    // banner: `https://i.ibb.co.com/nqNHxg8g/demoOne.png`,
+    video: "https://www.youtube.com/watch?v=milYZrqLJsE",
     isYoutube: true,
     version,
     isPremium,

@@ -4,7 +4,7 @@ Donate link: https://gum.co/wpdonate/
 Tags: block, service, card, gutenberg, custom post type
 Requires at least: 6.3
 Tested up to: 6.8
-Stable tag: 1.0.3
+Stable tag: 1.0.1
 Requires PHP: 7.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -93,16 +93,11 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 2. Screenshot 2
 
 == Changelog ==
+= 1.0.0 =
+* update Free or Pro version
 
-= 1.0.3 =
-* free or Pro update
 
-= 1.0.2 =
-* activation update
-
-= 1.0.1 =
-* payment coupon
-
+== Changelog ==
 = 1.0.0 =
 * Initial Release
 

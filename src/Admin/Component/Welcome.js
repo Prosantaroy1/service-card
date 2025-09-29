@@ -1,26 +1,23 @@
 import Overview from "../../../../bpl-tools/Admin/Overview/Overview";
 import Changelog from "../../../../bpl-tools/Admin/Changelog/Changelog";
-import FSCheckoutButton from "../../../../bpl-tools/Admin/FSCheckoutButton/FSCheckoutButton";
+//import FSCheckoutButton from "../../../../bpl-tools/Admin/FSCheckoutButton/FSCheckoutButton";
 
 import { changelogs } from "../utils/data";
 
 const Welcome = (props) => {
-    const { name, isPremium, freemius } = props;
+    const { isPremium, } = props;
 
     return (
         <>
             <Overview {...props}>
-                {!isPremium && (
-                    <FSCheckoutButton
-                        {...{
-                            freemius,
-                            options: { title: name, },
-                            buttonProps: { variant: "secondary" },
-                        }}
-                    >
-                        Buy Now
-                    </FSCheckoutButton>
-                )}
+                {!isPremium && <button
+                    type='button'
+                    className='bPlButton variant-secondary'
+                    onClick={(e) => {
+                        e.preventDefault();
+                        window.location.hash = '#/pricing';
+                    }}
+                >Buy Now</button>}
             </Overview>
 
             <Changelog changelogs={changelogs} {...props} />

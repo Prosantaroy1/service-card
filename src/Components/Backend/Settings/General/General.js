@@ -4,12 +4,13 @@ import { themeSwitch } from "../../../../utils/functions";
 import { themeOption } from '../../../../utils/options';
 import { ItemsPanel } from '../../../../../../bpl-tools/Components';
 import ServiceItemPanel from '../../ServiceItemPanel/ServiceItemPanel';
+import { BControlPro } from '../../../../../../bpl-tools/ProControls';
 
-const General = ({ attributes, setAttributes }) => {
+const General = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
 
   const { theme, activeIndex } = attributes;
 
-
+  const premiumProps = { isPremium, setIsProModalOpen };
 
   return (
     <>
@@ -18,17 +19,17 @@ const General = ({ attributes, setAttributes }) => {
         title={__("Theme Switch", "service-card")}
         initialOpen={true}
       >
-        <SelectControl
+
+        <BControlPro
           labelPosition="left"
           value={theme}
           options={themeOption}
-          // onChange={(v) => setAttributes(themeSwitch(v, attributes))}
           onChange={(v) => {
             const newAttrs = themeSwitch(v, attributes);
             setAttributes(newAttrs);
           }}
-
-          __next40pxDefaultSize={true}
+          Component={SelectControl}
+          {...premiumProps}
         />
 
       </PanelBody>

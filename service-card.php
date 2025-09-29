@@ -2,17 +2,24 @@
 /**
  * Plugin Name: Service Card 
  * Description: Short description of the plugin Service Card 
- * Version: 1.0.3
+ * Version: 1.0.1
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: service-card
+ * Domain Path: /languages
+ ** @fs_premium_only /freemius
+ ** @fs_free_only /freemius-lite
  */
 
 // ABS PATH
 if (!defined('ABSPATH')) {
 	exit;
+}
+// Include Codestar Framework
+if (file_exists(plugin_dir_path(__FILE__) . 'codestar-framework/codestar-framework.php')) {
+	require_once plugin_dir_path(__FILE__) . 'codestar-framework/codestar-framework.php';
 }
 
 
@@ -25,10 +32,10 @@ if (function_exists('sc_fs')) {
 			deactivate_plugins('service-card-premium/service-card.php');
 		}
 	});
-	// sc_fs()->set_basename(true, __FILE__);
+	//sc_fs()->set_basename(true, __FILE__);
 } else {
 	// Constant
-	define('SCD_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.3');
+	define('SCD_VERSION', isset($_SERVER['HTTP_HOST']) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.1');
 	define('SCD_DIR_URL', plugin_dir_url(__FILE__));
 	define('SCD_DIR_PATH', plugin_dir_path(__FILE__));
 	//==define==
@@ -46,7 +53,7 @@ if (function_exists('sc_fs')) {
 				if (SCD_HAS_PRO) {
 					require_once dirname(__FILE__) . '/freemius/start.php';
 				} else {
-					require_once dirname(__FILE__) . '/freemius-lite/freemius-lite/start.php';
+					require_once dirname(__FILE__) . '/freemius-lite/start.php';
 				}
 
 				$scdConfig = array(
@@ -61,10 +68,10 @@ if (function_exists('sc_fs')) {
 					'has_paid_plans' => true,
 					'wp_org_gatekeeper' => 'OA7#BoRiBNqdf52FvzEf!!074aRLPs8fspif$7K1#4u4Csys1fQlCecVcUTOs2mcpeVHi#C2j9d09fOTvbC0HloPT7fFee5WdS3G',
 					'menu' => array(
-						'slug' => 'edit.php?post_type=Service_card',
+						'slug' => 'edit.php?post_type=service_card',
 						'first-path' => 'edit.php?post_type=service_card&page=service_card_Dashboard',
 						'support' => false,
-					)
+					),
 				);
 
 
@@ -97,6 +104,9 @@ if (function_exists('sc_fs')) {
 				add_action('admin_enqueue_scripts', [$this, 'sc_admin_enqueue_script']);
 				add_action('admin_menu', [$this, 'add_service_card_submenu']);
 				add_action('admin_enqueue_scripts', [$this, 'adminEnqueueScripts']);
+				//metabox
+				//add_action('add_meta_boxes', [$this, 'scd_add_custom_meta_box']);
+				//add_action('save_post', [$this, 'scd_save_meta_data']);				
 				// for premium only
 				add_action('wp_ajax_scbPremiumChecker', [$this, 'scbPremiumChecker']);
 				add_action('wp_ajax_nopriv_scbPremiumChecker', [$this, 'scbPremiumChecker']);
@@ -106,7 +116,7 @@ if (function_exists('sc_fs')) {
 
 			function scbPremiumChecker()
 			{
-				$nonce = sanitize_text_field($_POST['_wpnonce'] ?? null);
+				$nonce = sanitize_text_field($_POST['_wpnonce'] ?? '');
 
 				if (!wp_verify_nonce($nonce, 'wp_ajax')) {
 					wp_send_json_error('Invalid Request');
@@ -133,8 +143,8 @@ if (function_exists('sc_fs')) {
 			function onInit()
 			{
 				register_block_type(__DIR__ . '/build');
-				register_post_type('Service_card', [
-					'label' => 'Service_card',
+				register_post_type('service_card', [
+					'label' => 'service_card',
 					'description' => 'this is Service_card and seo friendly card',
 					'labels' => [
 						'name' => __('Service_card', 'service-card'),
@@ -184,6 +194,40 @@ if (function_exists('sc_fs')) {
 
 
 				]);
+			}
+			//submenu
+			function add_service_card_submenu()
+			{
+				add_submenu_page(
+					'edit.php?post_type=service_card',
+					'Get Service',
+					'Get Service',
+					'manage_options',
+					'service_card_Dashboard',
+					[$this, 'sc_service_card_Dashboard_page']
+				);
+			}
+
+			// Dashboard Menu
+			function sc_service_card_Dashboard_page()
+			{
+				?>
+				<div id='vgbDashboard' data-info='<?php echo esc_attr(wp_json_encode([
+					'version' => SCD_VERSION,
+					'isPremium' => scbIsPremium(),
+					'hasPro' => SCD_HAS_PRO,
+				])); ?>'></div>
+				<?php
+			}
+			function adminEnqueueScripts($hook)
+			{
+
+				if ('service_card_page_service_card_Dashboard' === $hook) {
+					wp_enqueue_style('vgb-admin-style', SCD_DIR_URL . './build/admin-dashboard.css', false, SCD_VERSION);
+					wp_enqueue_script('vgb-admin-script', SCD_DIR_URL . './build/admin-dashboard.js', ['react', 'react-dom', 'wp-data', "wp-api", "wp-util", "wp-i18n", "lodash"], SCD_VERSION, true);
+					wp_set_script_translations('vgb-admin-dashboard', 'service-card', SCD_DIR_PATH . 'languages');
+
+				}
 			}
 			//custome column add CPT
 			function sc_setCustomColumn_edit($column)
@@ -248,7 +292,7 @@ if (function_exists('sc_fs')) {
 				$blocks = parse_blocks($post->post_content);
 				return render_block($blocks[0]);
 			}
-			//data enqueueshortcode
+			//data shortcode enqueueshortcode
 			function sc_admin_enqueue_script()
 			{
 				global $typenow;
@@ -265,45 +309,163 @@ if (function_exists('sc_fs')) {
 
 				}
 			}
-			//submenu
-			function add_service_card_submenu()
+			//metabox 
+			/*
+			function scd_add_custom_meta_box()
 			{
-				add_submenu_page(
-					'edit.php?post_type=service_card',
-					'Dashboard',
-					'Dashboard',
-					'manage_options',
-					'service_card_Dashboard',
-					[$this, 'sc_service_card_Dashboard_page'],
-					0
+				//echo $screen;
+				add_meta_box(
+					'scd_service_meta',           // ID
+					'Service Details',             // Title
+					[$this, 'scd_service_meta_callback'],   // Callback function
+					'service_card',                // Post type
+					'normal',                      // Context (normal, side, advanced)
+					'high'  ,                       // Priority
+					   array( '__block_editor_compatible_meta_box' => true )
 				);
 			}
-
-			// Dashboard Menu
-			function sc_service_card_Dashboard_page()
+			function scd_service_meta_callback($post)
 			{
-				?>
-				<div id='vgbDashboard' data-info='<?php echo esc_attr(wp_json_encode([
-					'version' => SCD_VERSION,
-					'isPremium' => scbIsPremium(),
-					'hasPro' => SCD_HAS_PRO,
-				])); ?>'></div>
-				<?php
+				// Old value get
+				$price = get_post_meta($post->ID, '_scd_price', true);
+				$icon = get_post_meta($post->ID, '_scd_icon', true);
+
+				echo '<label for="scd_price">Price:</label>';
+				echo '<input type="text" name="scd_price" id="scd_price" value="' . esc_attr($price) . '" style="width:100%;" />';
+
+				echo '<br><br>';
+
+				echo '<label for="scd_icon">Icon Class:</label>';
+				echo '<input type="text" name="scd_icon" id="scd_icon" value="' . esc_attr($icon) . '" style="width:100%;" />';
 			}
-			function adminEnqueueScripts($hook)
+			function scd_save_meta_data($post_id)
 			{
-
-				if ('service_card_page_service_card_Dashboard' === $hook) {
-					wp_enqueue_style('vgb-admin-style', SCD_DIR_URL . './build/admin-dashboard.css', false, SCD_VERSION);
-					wp_enqueue_script('vgb-admin-script', SCD_DIR_URL . './build/admin-dashboard.js', ['react', 'react-dom', 'wp-data', "wp-api", "wp-util", "wp-i18n", "lodash"], SCD_VERSION, true);
-					wp_set_script_translations('vgb-admin-dashboard', 'video-gallery', SCD_DIR_PATH . 'languages');
-
+				if (array_key_exists('scd_price', $_POST)) {
+					update_post_meta($post_id, '_scd_price', sanitize_text_field($_POST['scd_price']));
+				}
+				if (array_key_exists('scd_icon', $_POST)) {
+					update_post_meta($post_id, '_scd_icon', sanitize_text_field($_POST['scd_icon']));
 				}
 			}
+			*/
+
+
 
 		}
 
 		new PREFIXPlugin();
 
 	}
+
+
+	// ==================== Codestar Framework Options ====================
+	if (class_exists('CSF')) {
+
+		$prefix = 'service_card_options';
+
+		// Create options menu
+		CSF::createOptions($prefix, array(
+			'menu_title' => 'Service Card Settings',
+			'menu_slug' => 'service-card-settings',
+			'menu_type' =>'submenu',
+			'menu_parent' => 'edit.php?post_type=service_card',
+		));
+
+		// General Settings Section
+		CSF::createSection($prefix, array(
+			'title' => 'General',
+			'fields' => array(
+
+				array(
+					'id' => 'default_title',
+					'type' => 'text',
+					'title' => 'Default Card Title',
+					'default' => 'My Service Card',
+				),
+
+				array(
+					'id' => 'button_text',
+					'type' => 'text',
+					'title' => 'Button Text',
+					'default' => 'Read More',
+				),
+
+				array(
+					'id' => 'bg_color',
+					'type' => 'color',
+					'title' => 'Card Background Color',
+					'default' => '#f4f4f4',
+				),
+				array(
+					'id' => 'opt-gallery-1',
+					'type' => 'gallery',
+					'title' => 'Gallery',
+				),
+				array(
+					'id' => 'opt-switcher-1',
+					'type' => 'switcher',
+					'title' => 'Switcher',
+				),
+				array(
+					'id' => 'opt-textarea',
+					'type' => 'textarea',
+					'title' => 'Textarea',
+					'default' => 'Lorem ipsum dollar.'
+				),
+			)
+		));
+
+	}
+	/**
+	 * Show CSF options preview on the Service Card Settings admin page
+	 */
+	add_action('admin_notices', function () {
+
+
+		if (!is_admin()) {
+			return;
+		}
+
+
+		if (empty($_GET['page']) || $_GET['page'] !== 'service-card-settings') {
+			return;
+		}
+
+		$options = get_option('service_card_options', array());
+
+
+		$title = !empty($options['default_title']) ? $options['default_title'] : 'My Service Card';
+		$btnText = !empty($options['button_text']) ? $options['button_text'] : 'Read More';
+		$bgColor = !empty($options['bg_color']) ? $options['bg_color'] : '#f4f4f4';
+		$textarea = !empty($options['opt-textarea']) ? $options['opt-textarea'] : '';
+
+		$style = 'margin-top:30px; padding:20px; background:' . esc_attr($bgColor) . '; border:1px solid #ddd; border-radius:8px;';
+
+		echo '<div class="notice is-dismissible" style="padding:0; background:transparent; border:none;">';
+		echo '<div style="' . $style . '">';
+		echo '<h2 style="margin:0 0 10px 0;">' . esc_html($title) . '</h2>';
+		if ($textarea) {
+			echo '<p>' . esc_html($textarea) . '</p>';
+		}
+		echo '<button style="padding:8px 15px; background:#0073aa; color:#fff; border:none; border-radius:5px;">' . esc_html($btnText) . '</button>';
+		echo '</div>';
+		echo '</div>';
+	});
+
+	//Dashboard a my block info show korar jonno 
+	add_action('wp_dashboard_setup', function () {
+		wp_add_dashboard_widget(
+			'scd_simple_widget',               // Widget ID
+			__('Service Card Info', 'service-card'), // Title
+			function () {                      // Display callback
+				echo '<p>Welcome! This is your Service Card plugin dashboard widget.</p>';
+				echo '<p>Welcome! This is your Service Card plugin dashboard widget.
+				  This is your Service Card plugin dashboard widget. This is your Service Card plugin dashboard widget.
+				</p>';
+			}
+		);
+	});
+
+
+
 }
