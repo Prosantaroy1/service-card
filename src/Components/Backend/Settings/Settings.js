@@ -24,7 +24,7 @@ const Settings = ({ attributes, setAttributes, device, clientId, isPremium, site
 			<TabPanel className='bPlTabPanel wp-block-b-blocks-test-purpose' activeClass='activeTab' tabs={generalStyleTabs} onSelect={tabController}>
 				{
 					tab => <>
-						{'general' === tab.name && <General  {...{ attributes, setAttributes, device, isPremium, setIsProModalOpen }} />}
+						{'general' === tab.name && <General  {...{ attributes, setAttributes, device }} />}
 
 						{'style' === tab.name && <Style  {...{ attributes, setAttributes, device, isPremium, setIsProModalOpen }} />}
 					</>

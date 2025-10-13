@@ -14,6 +14,8 @@ const Style = ({ attributes, setAttributes, device, isPremium, setIsProModalOpen
 
   const premiumProps = { isPremium, setIsProModalOpen };
 
+  console.log('style pro cheek', isPremium)
+
   return (
     <>
       <PanelBody className='bPlPanelBody' title={__('Grid Layout', 'service-card')} initialOpen={false}>

@@ -4,14 +4,13 @@ import Style from "../Common/Style";
 import { withSelect } from "@wordpress/data";
 import ThemeSwitch from '../Theme/ThemeSwitch/ThemeSwitch';
 import ClipBoard from '../../shortcode/ClipBoard';
-import { usePremiumInEditor } from '../../../../bpl-tools/hooks';
 
 const Edit = (props) => {
   const { attributes, setAttributes, clientId, device, postId, postType } = props;
 
-  const { isPremium } = usePremiumInEditor("scbUtils", "scbPremiumChecker");
+  const isPremium = scdIsPipeChecker;
 
-
+  console.log('edit pro check', isPremium)
 
   return (
     <>
