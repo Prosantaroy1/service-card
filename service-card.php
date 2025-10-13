@@ -26,7 +26,6 @@ if (function_exists('sc_fs')) {
     define('SCD_DIR_PATH', plugin_dir_path(__FILE__));
     define('SCD_HAS_PRO', (plugin_basename(__FILE__) === 'service-card-premium/service-card.php'));
 
-
     if (!function_exists('sc_fs')) {
 
         function sc_fs()
@@ -37,14 +36,13 @@ if (function_exists('sc_fs')) {
                 $fsLitePath = SCD_DIR_PATH . '/freemius-lite/start.php';
                 $fsPath = SCD_DIR_PATH . '/freemius/start.php';
 
-                // Include Freemius SDK.
                 if (SCD_HAS_PRO && (file_exists($fsPath))) {
                     require_once $fsPath;
                 } else {
                     require_once $fsLitePath;
                 }
 
-                $scdFsConfig = [
+                $scdFsConfig =  [
                     'id' => '20854',
                     'slug' => 'service-card',
                     'type' => 'plugin',
@@ -78,7 +76,6 @@ if (function_exists('sc_fs')) {
 
         do_action('sc_fs_loaded');
     }
-
 
     require_once SCD_DIR_PATH . 'includes/class_scbPlugin.php';
     new SCBPlugin();

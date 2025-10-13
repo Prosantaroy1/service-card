@@ -4,13 +4,9 @@ import {
     Route,
     Navigate,
 } from "react-router-dom";
-
 import ListDemos from "../../../../bpl-tools/Admin/Demos/ListDemos";
-import FSCheckoutButton from "../../../../bpl-tools/Admin/FSCheckoutButton/FSCheckoutButton";
 import Pricing from "../../../../bpl-tools/Admin/Pricing/Pricing";
 import FeatureCompare from "../../../../bpl-tools/Admin/FeatureCompare/FeatureCompare";
-
-import FilterDemos from "../../../../bpl-tools/Admin/Demos/FilterDemos";
 import FSCheckoutForm from "../../../../bpl-tools/Admin/FSCheckoutForm/FSCheckoutForm";
 
 import Layout from "./Layout";
@@ -18,13 +14,14 @@ import {
     demoInfo,
     pricingInfo,
     featureCompareInfo,
-    filterDemoInfo,
 } from "../utils/data";
 import Welcome from "./Welcome";
 
 const App = (props) => {
 
     const { name, isPremium, freemius } = props;
+
+    console.log(props)
 
     return (
         <Router>
@@ -38,28 +35,18 @@ const App = (props) => {
                         path="demos"
                         element={
                             <ListDemos demoInfo={demoInfo} {...props}>
-                                {!isPremium && (
-                                    <FSCheckoutButton
-                                        {...{
-                                            freemius,
-                                            options: { title: name },
-                                        }}
-                                    >
-                                        Buy Now
-                                    </FSCheckoutButton>
-                                )}
+                                {!isPremium && <button
+                                    type='button'
+                                    className='bPlButton variant-secondary'
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        window.location.hash = '#/pricing';
+                                    }}
+                                >Buy Now</button>}
                             </ListDemos>
                         }
                     />
 
-                    {/* {!isPremium && (
-                        <Route
-                            path="pricing"
-                            element={
-                                <Pricing pricingInfo={pricingInfo} options={{}} {...props} />
-                            }
-                        />
-                    )} */}
 
                     {!isPremium && (
                         <Route
@@ -69,25 +56,6 @@ const App = (props) => {
                             }
                         />
                     )}
-
-                    <Route
-                        path="filter-demos"
-                        element={
-                            <FilterDemos demoInfo={filterDemoInfo} {...props}>
-                                {!isPremium && (
-                                    <FSCheckoutButton
-                                        {...{
-                                            freemius,
-                                            options: { title: name },
-                                        }}
-                                    >
-                                        {/* {cartIcon} */}
-                                        Upgrade Now
-                                    </FSCheckoutButton>
-                                )}
-                            </FilterDemos>
-                        }
-                    />
 
                     {!isPremium && (
                         <Route
