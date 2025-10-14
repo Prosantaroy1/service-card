@@ -18,6 +18,7 @@ const Settings = ({ attributes, setAttributes, device, clientId, isPremium, site
 	const [isProModalOpen, setIsProModalOpen] = useState(false);
 	const siteLocation = `${siteUrl}/wp-admin/edit.php?post_type=service_card&page=service_card_Dashboard#/pricing`;
 
+	const premiumProps = { isPremium, setIsProModalOpen }
 
 	return <>
 		<InspectorControls>
@@ -38,6 +39,7 @@ const Settings = ({ attributes, setAttributes, device, clientId, isPremium, site
 				clientId={clientId}
 				value={theme}
 				blocks={blocks}
+				premiumProps={premiumProps}
 			/>
 		</BlockControls>
 

@@ -7,6 +7,51 @@
 .wp-block-scd-service-card * {
   box-sizing: border-box;
 }
+.wp-block-scd-service-card .premium-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+.wp-block-scd-service-card .premium-overlay .premium-overlay-inner {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.wp-block-scd-service-card .premium-overlay .premium-overlay-inner h3 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.wp-block-scd-service-card .premium-overlay .premium-overlay-inner p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #444;
+}
+.wp-block-scd-service-card .premium-overlay .premium-overlay-inner .upgrade-btn {
+  background: #0073aa;
+  color: #fff;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.wp-block-scd-service-card .premium-overlay .premium-overlay-inner .upgrade-btn:hover {
+  background: #005f8d;
+}
 .wp-block-scd-service-card .service-card-wrapper .serviceContainer .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

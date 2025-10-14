@@ -19,7 +19,8 @@ export const blocks = [
 	{
 		label: 'Default',
 		value: 'default',
-		content: `<!-- wp:scd/service-card /-->`
+		content: `<!-- wp:scd/service-card /-->`,
+		isPro: false
 	},
 	{
 		label: 'ThemeTwo',

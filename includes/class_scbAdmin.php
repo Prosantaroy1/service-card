@@ -57,7 +57,7 @@ if (!class_exists('SCBAdmin')) {
                 'public' => true, //frontend or backend show
                 "publicly_queryable" => false, //view link hidden
                 'show_ui' => true,  //admin show
-                'show_in_menu' => true,
+                'show_in_menu' => "edit.php?post_type=b-pricing-table",
                 'show_in_rest' => true,  //REST support
                 'menu_position' => 79, //position type
                 'menu_icon' => 'dashicons-index-card', //icon
@@ -72,7 +72,7 @@ if (!class_exists('SCBAdmin')) {
         public function add_service_card_submenu()
         {
             add_submenu_page(
-                scbIsPremium() ? 'edit.php?post_type=service_card' : 'tools.php',
+                SCD_HAS_PRO ? 'edit.php?post_type=service_card' : 'tools.php',
                 'Get Service',
                 'Get Service',
                 'manage_options',

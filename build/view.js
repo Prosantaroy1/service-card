@@ -1066,33 +1066,31 @@ function ServiceThemeOne({
     className: "serviceContainer serviceThemeOne"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "card-grid"
-  }, serviceData?.length > 0 && serviceData.map((item, index) => {
-    return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      key: index,
-      className: "card-vertical",
-      onClick: () => setAttributes({
-        activeIndex: index
-      })
-    }, icon?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "icon-wrapper"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      className: "icon",
-      dangerouslySetInnerHTML: {
-        __html: item?.icon
-      }
-    })), title?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-      className: "card-title"
-    }, item?.title), description?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-      className: "card-description"
-    }, item?.description), icon?.position === true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "icon-wrapper"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-      className: "icon",
-      dangerouslySetInnerHTML: {
-        __html: item?.icon
-      }
-    })));
-  })));
+  }, serviceData?.length > 0 && serviceData.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    key: index,
+    className: "card-vertical",
+    onClick: () => setAttributes({
+      activeIndex: index
+    })
+  }, icon?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "icon-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "icon",
+    dangerouslySetInnerHTML: {
+      __html: item?.icon
+    }
+  })), title?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "card-title"
+  }, item?.title), description?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "card-description"
+  }, item?.description), icon?.position === true && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "icon-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "icon",
+    dangerouslySetInnerHTML: {
+      __html: item?.icon
+    }
+  }))))));
 }
 
 /***/ }),
@@ -1179,7 +1177,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function ServiceThemeTwo({
   attributes,
-  setAttributes
+  setAttributes,
+  isPremium
 }) {
   const {
     serviceData = [],
@@ -1193,8 +1192,14 @@ function ServiceThemeTwo({
     title,
     description
   } = cardBody;
+  const handleUpgradeClick = () => {
+    window.open("https://yoursite.com/upgrade", "_blank"); // ✅ তোমার upgrade পেজ URL
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "serviceContainer serviceThemeTwo"
+    className: "serviceContainer serviceThemeTwo",
+    style: {
+      position: "relative"
+    }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "card-grid"
   }, serviceData?.length > 0 && serviceData.map((item, index) => {
@@ -1218,7 +1223,14 @@ function ServiceThemeTwo({
     }, item?.title), description?.show === false && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
       className: "card-description"
     }, item?.description)));
-  })));
+  })), !isPremium && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "premium-overlay"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "premium-overlay-inner"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "\uD83D\uDD12 Premium Feature"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "This feature is available in the Pro version."), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "upgrade-btn",
+    onClick: handleUpgradeClick
+  }, "Upgrade Now"))));
 }
 
 /***/ }),
@@ -1244,7 +1256,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function ThemeSwitch({
   attributes,
-  setAttributes
+  setAttributes,
+  isPremium
 }) {
   const {
     theme = "default"
@@ -1252,29 +1265,34 @@ function ThemeSwitch({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(ThemeChange, {
     theme: theme,
     attributes,
-    setAttributes
+    setAttributes,
+    isPremium
   });
 }
 const ThemeChange = ({
   theme,
   attributes,
-  setAttributes
+  setAttributes,
+  isPremium
 }) => {
   switch (theme) {
     case 'themeTwo':
       return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ServiceThemeTwo__WEBPACK_IMPORTED_MODULE_3__["default"], {
         attributes,
-        setAttributes
+        setAttributes,
+        isPremium
       });
     case 'themeThree':
       return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ServiceThemeThree__WEBPACK_IMPORTED_MODULE_2__["default"], {
         attributes,
-        setAttributes
+        setAttributes,
+        isPremium
       });
     default:
       return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ServiceThemeOne__WEBPACK_IMPORTED_MODULE_1__["default"], {
         attributes,
-        setAttributes
+        setAttributes,
+        isPremium
       });
   }
 };

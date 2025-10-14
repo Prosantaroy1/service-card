@@ -10,7 +10,6 @@ const Edit = (props) => {
 
   const isPremium = scdIsPipeChecker;
 
-  console.log('edit pro check', isPremium)
 
   return (
     <>
@@ -23,7 +22,7 @@ const Edit = (props) => {
           {postType == "service_card" && (
             <ClipBoard shortcode={`[service_card id=${postId}]`} />
           )}
-          <ThemeSwitch {...{ attributes, setAttributes }} />
+          <ThemeSwitch {...{ attributes, setAttributes, isPremium }} />
         </div>
 
       </div>

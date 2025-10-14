@@ -830,6 +830,17 @@ svg.bPlBlockIcon {
   color: #fff;
   background: #146EF5;
 }
+.bPlBlockPreviewWrapper .bPl-proTag {
+  background: #ff0066;
+  color: #fff;
+  font-size: 10px;
+  margin-left: 6px;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+.bPlBlockPreviewWrapper .bPl-proBtn {
+  position: relative;
+}
 /*!****************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!../bpl-tools/Components/Button/style.scss ***!
   \****************************************************************************************************************************************************************************************************************************************************************/

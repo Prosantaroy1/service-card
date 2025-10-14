@@ -51,7 +51,27 @@ if (!class_exists('SCBPlugin')) {
                         if ($activeLicence) {
                             return render_block($block);
                         } else {
-                            return "Please active your licenses !!";
+                            $overlayHTML = '
+
+                                        <style>
+                                            .bcb-premium-slider-wrapper { position: relative; }
+                                            .bcb-premium-overlay { top: 382px; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; justify-content: center; align-items: center; z-index: 999; }
+                                            .bcb-premium-overlay-content { text-align: center; padding: 20px 30px; border-radius: 10px; max-width: 300px; color: white; }
+                                            .bcb-upgrade-btn { display: inline-block; margin-top: 10px; padding: 8px 18px; background-color: #0073aa; color: #fff; text-decoration: none; font-weight: 600; border-radius: 5px; transition: background-color 0.3s ease; }
+                                            .bcb-upgrade-btn:hover { background-color: #005177; }
+                                            @media (max-width: 480px) { .bcb-premium-overlay-content { padding: 15px 20px; } .bcb-upgrade-btn { padding: 6px 14px; } }
+                                        </style>
+                                        <div class="bcb-premium-overlay">
+                                            <div class="bcb-premium-overlay-content">
+                                            <p>This shortcode feature is available in the Pro version. If you are using the Pro version, please activate your license.</p>
+                                            <a href="' . esc_url(admin_url('edit.php?post_type=service_card&page=service_card_Dashboard#/pricing')) . '" class="bcb-upgrade-btn">Upgrade to Pro</a>
+                                            </div>
+                                        </div>';
+
+                            return '
+                                    <div class="bcb-premium-slider-wrapper">
+                                        ' . $overlayHTML . '
+                                    </div>';
                         }
                     }
                 } else {
