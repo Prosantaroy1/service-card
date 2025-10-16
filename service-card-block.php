@@ -9,6 +9,7 @@ if (!class_exists('SCBBlock')) {
         {
             add_action('init', [$this, 'onInit']);
             add_action('enqueue_block_editor_assets', [$this, "scbEnqueueEditorAssets"]);
+            add_action('enqueue_block_assets', [$this, "scbEnqueueFrontendAssets"]);
         }
 
         public function onInit()
@@ -26,6 +27,22 @@ if (!class_exists('SCBBlock')) {
             );
 
         }
+        public function scbEnqueueFrontendAssets() {
+            wp_add_inline_script(
+                'scd-service-card-view-script',
+                'const scdIsPipeChecker = ' . wp_json_encode(scbIsPremium()) . ';',
+                'before'
+            );
+        }
+
+        // public function renderBlock($attributes, $content)
+        // {
+        //     $is_premium = scbIsPremium();
+
+        //     ob_start();
+        //     include __DIR__ . '/src/render.php';
+        //     return ob_get_clean();
+        // }
 
     }
 

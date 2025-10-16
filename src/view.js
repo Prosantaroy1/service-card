@@ -5,18 +5,40 @@ import ThemeSwitch from './Components/Theme/ThemeSwitch/ThemeSwitch';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-	const blockNameEls = document.querySelectorAll('.wp-block-scd-service-card');
-	blockNameEls.forEach(blockNameEl => {
-		const attributes = JSON.parse(blockNameEl.dataset.attributes);
+	const blockEls = document.querySelectorAll('.wp-block-scd-service-card');
 
-		createRoot(blockNameEl).render(<>
-			<Style attributes={attributes} id={blockNameEl.id} />
+	blockEls.forEach(blockEl => {
+		const attributes = JSON.parse(blockEl.dataset.attributes);
+		const isPremium = scdIsPipeChecker;
+		console.log('check pro', isPremium)
+		const activeTheme = attributes?.theme || 'default';
+		const proThemes = ['themeTwo', 'themeThree'];
+		const showOverlay = !isPremium && proThemes.includes(activeTheme);
 
-			<div className='service-card-wrapper'>
-				<ThemeSwitch {...{ attributes }} />
-			</div>
-		</>);
+		const siteLocation = `/wp-admin/edit.php?post_type=service_card&page=service_card_Dashboard#/pricing`;
 
-		blockNameEl?.removeAttribute('data-attributes');
+		createRoot(blockEl).render(
+			<>
+				<Style attributes={attributes} id={blockEl.id} />
+
+				<div className="service-card-wrapper" style={{ position: 'relative' }}>
+					<ThemeSwitch {...{ attributes }} />
+					{showOverlay && (
+						<div className="scd-pro-overlay">
+							<div className="overlay-inner">
+								<h3>🚫 Premium Feature</h3>
+								<p>This theme requires a Pro license.</p>
+								<a href={siteLocation} rel="noreferrer" target="_blank" className="upgrade-btn">
+									Upgrade Now
+								</a>
+							</div>
+						</div>
+					)}
+				</div>
+			</>
+		);
+
+		blockEl.removeAttribute('data-attributes');
 	});
 });
+

@@ -1,13 +1,9 @@
 
-export default function ServiceThemeTwo({ attributes, setAttributes, isPremium }) {
+export default function ServiceThemeTwo({ attributes, setAttributes }) {
 
     const { serviceData = [], Styles = {} } = attributes;
     const { cardBody } = Styles;
     const { icon, title, description } = cardBody;
-
-    const handleUpgradeClick = () => {
-        window.open("https://yoursite.com/upgrade", "_blank"); // ✅ তোমার upgrade পেজ URL
-    };
 
     return (
         <div className='serviceContainer serviceThemeTwo' style={{ position: "relative" }}>
@@ -41,18 +37,7 @@ export default function ServiceThemeTwo({ attributes, setAttributes, isPremium }
                     })
                 }
             </div>
-            {/* 🔒 Overlay (only when NOT premium) */}
-            {!isPremium && (
-                <div className="premium-overlay">
-                    <div className="premium-overlay-inner">
-                        <h3>🔒 Premium Feature</h3>
-                        <p>This feature is available in the Pro version.</p>
-                        <button className="upgrade-btn" onClick={handleUpgradeClick}>
-                            Upgrade Now
-                        </button>
-                    </div>
-                </div>
-            )}
+
         </div>
     )
 }

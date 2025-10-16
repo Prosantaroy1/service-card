@@ -9,6 +9,7 @@ if (!class_exists('SCBAdmin')) {
             if (SCD_HAS_PRO) {
                 add_action('init', [$this, 'scbRegisterType']);
             }
+           // add_action('init', [$this, 'scbRegisterType']);
             add_action('admin_menu', [$this, 'add_service_card_submenu']);
             add_filter('manage_service_card_posts_columns', [$this, 'sc_setCustomColumn_edit']);
             add_action('manage_service_card_posts_custom_column', [$this, 'sc_manageCustomColumn'], 10, 2);
@@ -57,7 +58,7 @@ if (!class_exists('SCBAdmin')) {
                 'public' => true, //frontend or backend show
                 "publicly_queryable" => false, //view link hidden
                 'show_ui' => true,  //admin show
-                'show_in_menu' => "edit.php?post_type=b-pricing-table",
+                'show_in_menu' => true,
                 'show_in_rest' => true,  //REST support
                 'menu_position' => 79, //position type
                 'menu_icon' => 'dashicons-index-card', //icon
@@ -73,6 +74,7 @@ if (!class_exists('SCBAdmin')) {
         {
             add_submenu_page(
                 SCD_HAS_PRO ? 'edit.php?post_type=service_card' : 'tools.php',
+                //'edit.php?post_type=service_card',
                 'Get Service',
                 'Get Service',
                 'manage_options',

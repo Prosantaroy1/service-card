@@ -33,6 +33,8 @@ if (!class_exists('SCBPlugin')) {
                 wp_enqueue_script('vgb-admin-script', SCD_DIR_URL . '/build/admin-dashboard.js', ['react', 'react-dom', 'wp-data', "wp-api", "wp-util", "wp-i18n", "lodash"], SCD_VERSION, true);
 
             }
+            // wp_enqueue_style('vgb-admin-style', SCD_DIR_URL . '/build/admin-dashboard.css', false, SCD_VERSION);
+            // wp_enqueue_script('vgb-admin-script', SCD_DIR_URL . '/build/admin-dashboard.js', ['react', 'react-dom', 'wp-data', "wp-api", "wp-util", "wp-i18n", "lodash"], SCD_VERSION, true);
         }
         public function service_card_shortcode($atts)
         {

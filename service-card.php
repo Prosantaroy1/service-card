@@ -25,6 +25,7 @@ if (function_exists('sc_fs')) {
     define('SCD_DIR_URL', plugin_dir_url(__FILE__));
     define('SCD_DIR_PATH', plugin_dir_path(__FILE__));
     define('SCD_HAS_PRO', (plugin_basename(__FILE__) === 'service-card-premium/service-card.php'));
+   // define('SCD_HAS_PRO', (plugin_basename(__FILE__) === 'service-card/service-card.php'));
 
     if (!function_exists('sc_fs')) {
 
@@ -64,6 +65,11 @@ if (function_exists('sc_fs')) {
                             'slug' => 'tools.php',
                         ),
                     ),
+                    //  'menu' => array(
+                    //     'slug' => 'edit.php?post_type=service_card',
+                    //     'first-path' => 'edit.php?post_type=service_card&page=service_card_Dashboard',
+                    //     'support' => false
+                    // ) 
                 ];
 
                 $sc_fs = SCD_HAS_PRO && file_exists($fsPath) ? fs_dynamic_init($scdFsConfig) : fs_lite_dynamic_init($scdFsConfig);
